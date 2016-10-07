@@ -2,8 +2,7 @@
 {<img src="https://travis-ci.org/clairelee/Altarena.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/clairelee/Altarena]
 
 == Altarena Playhouse & Custom Made Theater Co. (Directable)
-Baiyu Chen, Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
-GROUP 12
+Group 12: Baiyu Chen, Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
