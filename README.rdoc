@@ -18,6 +18,9 @@ in certain categories. The app will help the tight knit local community
 of creative directors to better organize their notes (instead of relying
 on pen and paper) and request information about actors/musicians auditioning
 for their productions from other directors the actors/musicians have worked with.
-Altarena: http://www.altarena.org/
-Custom Made: http://www.custommade.org/
-Armando Fox: http://www.armandofox.com/
+
+Customers:
+
+* Altarena: http://www.altarena.org/
+* Custom Made: http://www.custommade.org/
+* Armando Fox: http://www.armandofox.com/
