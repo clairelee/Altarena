@@ -8,4 +8,16 @@ Group 12: Baiyu Chen, Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
 
 * Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1885999
 
-A brief explanation of the customer's business need that the app addresses, including a link to the customer's website
+This app is meant to help local theatre directors, music directors, and
+choreographers keep track of portfolios of actors and musicians who audition
+for their productions. The app will let creative directors keep and organize
+private notes. They will also be able to securely request and share data about 
+specific actors with other directors who request the notes. The feedback
+will consist of free-form writing and also ratings of actors and musicians
+in certain categories. The app will help the tight knit local community 
+of creative directors to better organize their notes (instead of relying
+on pen and paper) and request information about actors/musicians auditioning
+for their productions from other directors the actors/musicians have worked with.
+Altarena: http://www.altarena.org/
+Custom Made: http://www.custommade.org/
+Armando Fox: http://www.armandofox.com/
