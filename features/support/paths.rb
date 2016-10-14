@@ -15,7 +15,16 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+    when /^the Login page$/
+      pending
+    when /^the Notes page$/
+      pending
+    when /^the Production page$/
+      pending
+    when /^the Create Profile page$/
+      pending
+    when /^the User Record page$/
+      pending
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
