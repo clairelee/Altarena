@@ -4,3 +4,11 @@ rvm:
 
 notifications:
   slack: cs169hq:wTi1MskoeU1BrdO8vWqPLE3j
+
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+  - bundle exec cucumber
+after_script:
+  - bundle exec rake send_to_codeclimate 
