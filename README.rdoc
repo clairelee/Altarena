@@ -1,10 +1,11 @@
-{<img src="https://codeclimate.com/github/rails/rails/badges/gpa.svg" />}[https://codeclimate.com/github/rails/rails]
-{<img src="https://travis-ci.org/clairelee/Altarena.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/clairelee/Altarena]
+{<img src="https://travis-ci.org/clairelee/directable.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/clairelee/directable]
+{<img src="https://codeclimate.com/github/clairelee/directable/badges/gpa.svg" />}[https://codeclimate.com/github/clairelee/directable]
+{<img src="https://codeclimate.com/github/clairelee/directable/badges/coverage.svg" />}[https://codeclimate.com/github/clairelee/directable/coverage]
 
 == Directable (Altarena Playhouse & Custom Made Theater Co.)
 Group 12: Baiyu Chen, Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
 
-* Heroku App (no splash page yet): https://directable.herokuapp.com/ 
+* Heroku App (no splash page yet): https://directable.herokuapp.com
 
 * Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1885999
 
