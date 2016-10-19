@@ -5,11 +5,12 @@ class NotesController < ApplicationController
     def show
         @note = Note.find(params[:id])
     end
+    
     def create
         @note = Note.new(note_params)
  
         @note.save
-        redirect_to note_path
+        redirect_to @note
     end
     
     private
