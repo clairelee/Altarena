@@ -9,7 +9,7 @@ class NotesController < ApplicationController
         @note = Note.new(note_params)
  
         @note.save
-        redirect_to @note
+        redirect_to note_path
     end
     
     private
