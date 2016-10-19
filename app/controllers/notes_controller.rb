@@ -2,6 +2,9 @@ class NotesController < ApplicationController
     def new
     end
     
+    def index
+        @notes = Note.all
+    end
     def show
         @note = Note.find(params[:id])
     end
