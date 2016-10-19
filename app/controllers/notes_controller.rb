@@ -14,7 +14,7 @@ class NotesController < ApplicationController
         @note = Note.new(note_params)
         puts("sup dude")
         @note.save
-        redirect_to new_note_path
+        redirect_to note_path
     end
     
     private
