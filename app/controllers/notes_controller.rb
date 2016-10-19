@@ -11,10 +11,10 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = Note.new(name:"John", description:"sup dude")
+        @note = Note.new(note_params)
         puts("sup dude")
         @note.save
-        redirect_to note_path
+        redirect_to new_note_path
     end
     
     private
