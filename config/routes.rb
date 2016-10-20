@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'sessions#create'
     get 'auth/failure', to: redirect('/')
     get 'signout', to: 'sessions#destroy', as: 'signout'
-    delete 'note_delete', to: 'notes#destroy'
+    get 'note_delete', to: 'notes#destroy'
 
     resources :sessions, only: [:create, :destroy]
     resources :home, only: [:show]
