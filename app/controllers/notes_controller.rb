@@ -12,7 +12,6 @@ class NotesController < ApplicationController
     
     def create
         @note = Note.new(note_params)
-        puts("sup dude")
         @note.save
         redirect_to note_path(note)
     end
