@@ -11,7 +11,7 @@
       <td><%= note.name %></td>
       <td><%= note.role %></td>
       <td><%= link_to 'Show', note_path(note) %></td>
-      <td><%= link_to 'Delete', note_delete(note), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></td>
+      <td><%= link_to 'Delete', note_delete(note), data: { confirm: 'Are you certain you want to delete this?' } %></td>
     </tr>
   <% end %>
 </table>
