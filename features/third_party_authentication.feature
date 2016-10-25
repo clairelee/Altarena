@@ -8,13 +8,13 @@ Feature: Third Party Authentication
     Given I am on the Login page
   
   Scenario: Redirect to Facebook Login page
-    When I press "Login_Facebook"
+    When I press "sign_in"
     Then I should be on the Facebook Authentication page
     
   Scenario: Successfully Login through Facebook
-    When I press "Login_Facebook"
+    When I press "sign_in"
     And I press "Okay"
-    Then I should see "Success!"
+    Then I should see "Signed in"
     
   Scenario: Redirect to Google Login page
     When I press "Login_Google"
