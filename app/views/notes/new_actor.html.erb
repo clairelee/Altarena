@@ -1,0 +1,27 @@
+<h1>New Note: Actor/Actress</h1>
+
+<%= form_for @note, :url => notes_create_actor_path(:id => @note.id), :html => { :method => :post }  do |f| %>
+    <p><b>Reads music?</b></p>
+    <fieldset id="reads_music">
+      <input type="radio" name="note[reads_music]" value="3"> 3 Very well<br>
+      <input type="radio" name="note[reads_music]" value="2"> 2 Can work on their own, but not sightread<br>
+      <input type="radio" name="note[reads_music]" value="1"> 1 No<br>
+    </fieldset>
+    
+    <p><b>Harmony singer?</b></p>
+    <fieldset id="harmony_singer">
+      <input type="radio" name="note[harmony_singer]" value="4"> 4 Pro/Veteran<br>
+      <input type="radio" name="note[harmony_singer]" value="3"> 3 Solidly teachable<br>
+      <input type="radio" name="note[harmony_singer]" value="2"> 2 Teachable but weak<br>
+      <input type="radio" name="note[harmony_singer]" value="1"> 1 No<br>
+    </fieldset>
+    
+    <p>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </p>
+    
+    <p>
+      <%= f.submit "Create Note"%>
+    </p>
+<% end %>

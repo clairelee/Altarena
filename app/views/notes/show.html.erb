@@ -2,11 +2,50 @@
   <strong>Name:</strong>
   <%= @note.name %>
 </p>
+
+<p>
+  <strong>Production:</strong>
+  <%= @note.production %>
+</p>
  
 <p>
   <strong>Role:</strong>
   <%= @note.role %>
 </p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @note.rating %>
+</p>
+
+<p>
+  <strong>Attitude:</strong>
+  <%= @note_fields["attitude"][@note.attitude] %>
+</p>
+
+<% if @note.role == "Musician" %>
+  <p>
+    <strong>Star Sub:</strong>
+    <%= @note_fields["star_sub"][@note.star_sub] %>
+  </p>
+  
+  <p>
+    <strong>Musical Maturity:</strong>
+    <%= @note_fields["musical_maturity"][@note.musical_maturity] %>
+  </p>
+<% end %>
+
+<% if @note.role == "Actor" or @note.role == "Actress" %>
+  <p>
+    <strong>Reads Music:</strong>
+    <%= @note_fields["reads_music"][@note.reads_music] %>
+  </p>
+  
+  <p>
+    <strong>Harmony Singer:</strong>
+    <%= @note_fields["harmony_singer"][@note.harmony_singer] %>
+  </p>
+<% end %>
 
 <p>
   <strong>Description:</strong>

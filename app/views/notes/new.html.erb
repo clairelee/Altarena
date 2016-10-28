@@ -7,17 +7,34 @@
   </p>
   
   <p>
+    <%= f.label :production %><br>
+    <%= f.text_field :production %>
+  </p>
+  
+  <p>
     <%= f.label :role %><br>
     <%= f.text_field :role %>
   </p>
+  
+  <p><b>Overall, Would you recommend/work with this person again?</b></p>
+  <fieldset id="rating">
+    <input type="radio" name="note[rating]" value="5"> 5 Yes!!<br>
+    <input type="radio" name="note[rating]" value="4"> 4 Yes<br>
+    <input type="radio" name="note[rating]" value="3"> 3 I won't cast them, but I won't object<br>
+    <input type="radio" name="note[rating]" value="2"> 2 Rather not<br>
+    <input type="radio" name="note[rating]" value="1"> 1 Definitely not<br>
+  </fieldset>
+  
+  <p><b>How is this person's attitude?</b></p>
+  <fieldset id="attitude">
+    <input type="radio" name="note[attitude]" value="4"> 4 Brings joy to every rehearsal<br>
+    <input type="radio" name="note[attitude]" value="3"> 3 Professional and easy to work with<br>
+    <input type="radio" name="note[attitude]" value="2"> 2 Sometimes needs managing<br>
+    <input type="radio" name="note[attitude]" value="1"> 1 Difficult<br>
+  </fieldset>
  
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
+    <%= f.submit "Next"%>
   </p>
  
 <%= link_to 'Back', root_path %>
