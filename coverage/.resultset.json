@@ -1,14 +1,14 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/directable/config/environment.rb": [
+      "/home/ubuntu/workspace/Altarena/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/config/application.rb": [
+      "/home/ubuntu/workspace/Altarena/config/application.rb": [
         1,
         null,
         1,
@@ -45,12 +45,12 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/boot.rb": [
+      "/home/ubuntu/workspace/Altarena/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/config/environments/test.rb": [
+      "/home/ubuntu/workspace/Altarena/config/environments/test.rb": [
         1,
         null,
         null,
@@ -94,7 +94,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/assets.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -107,7 +107,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/backtrace_silencers.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -116,18 +116,18 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/cookies_serializer.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/filter_parameter_logging.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/inflections.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -145,18 +145,25 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/mime_types.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/session_store.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/omniauth.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Altarena/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/config/initializers/wrap_parameters.rb": [
+      "/home/ubuntu/workspace/Altarena/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -172,52 +179,23 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/config/routes.rb": [
+      "/home/ubuntu/workspace/Altarena/config/routes.rb": [
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
+        1,
+        1,
+        1,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null,
         null,
         null,
@@ -230,7 +208,7 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/features/support/paths.rb": [
+      "/home/ubuntu/workspace/Altarena/features/support/paths.rb": [
         null,
         null,
         null,
@@ -279,7 +257,7 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/features/support/selectors.rb": [
+      "/home/ubuntu/workspace/Altarena/features/support/selectors.rb": [
         null,
         null,
         null,
@@ -325,7 +303,7 @@
         null,
         1
       ],
-      "/home/ubuntu/workspace/directable/features/step_definitions/notes_steps.rb": [
+      "/home/ubuntu/workspace/Altarena/features/step_definitions/notes_steps.rb": [
         1,
         0,
         null,
@@ -335,17 +313,17 @@
         null,
         null
       ],
-      "/home/ubuntu/workspace/directable/features/step_definitions/production_steps.rb": [
+      "/home/ubuntu/workspace/Altarena/features/step_definitions/production_steps.rb": [
         1,
         0,
         null
       ],
-      "/home/ubuntu/workspace/directable/features/step_definitions/user_record_steps.rb": [
+      "/home/ubuntu/workspace/Altarena/features/step_definitions/user_record_steps.rb": [
         1,
         0,
         null
       ],
-      "/home/ubuntu/workspace/directable/features/step_definitions/web_steps.rb": [
+      "/home/ubuntu/workspace/Altarena/features/step_definitions/web_steps.rb": [
         null,
         null,
         null,
@@ -602,6 +580,339 @@
         null
       ]
     },
-    "timestamp": 1476822531
+    "timestamp": 1477956927
+  },
+  "RSpec": {
+    "coverage": {
+      "/home/ubuntu/workspace/Directable/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/Directable/config/application.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/boot.rb": [
+        1,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/Directable/config/environments/test.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/assets.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/cookies_serializer.rb": [
+        null,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/omniauth.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/session_store.rb": [
+        null,
+        null,
+        1
+      ],
+      "/home/ubuntu/workspace/Directable/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/config/routes.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/helpers/notes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/controllers/notes_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        4,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Directable/app/models/note.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1477963853
   }
 }

@@ -56,11 +56,12 @@ group :development, :test do
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '2.14'
+  gem 'test-unit'
 end
 # setup Cucumber, RSpec, autotest support
 group :test do
   gem 'codeclimate-test-reporter', require: nil
-  gem 'rspec-rails', '2.14'
   gem 'simplecov', :require => false
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # basic imperative step defs
