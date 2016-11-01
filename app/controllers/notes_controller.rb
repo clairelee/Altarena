@@ -19,14 +19,10 @@ class NotesController < ApplicationController
     def show
         @note = Note.find(params[:id])
         @note_fields = note_fields
-        
     end
     
     def edit
         @note = Note.find(params[:id])
-        puts "asfasdfa e"
-        puts @note.rating
-        puts @note.attitude
         @note_fields = note_fields
     end
     
@@ -41,8 +37,7 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = Note.new(note_params)
-        @note.save
+        @note = Note.create!(note_params)
         if @note.role == "Musician"
             redirect_to notes_new_musician_path(:id => @note.id)
         elsif @note.role == "Actor" or @note.role == "Actress"
