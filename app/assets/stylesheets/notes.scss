@@ -3,50 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .top_border {
-    color: #2C3E50 !important;
+    color: white !important;
     border-top: 1px solid white;
     padding-top: 5px;
 }
-
+label {
+    color: white !important;
+}
+p {
+    color: white !important;
+}
+fieldset {
+    color: white !important;
+}
 .title {
-    color: #2C3E50 !important;
+    color: white !important;
     font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
 }
 
 #back-btn-new {
-    color: #2C3E50 !important;
+    color: white !important;
     position: relative;
     top: 50px;
     right: 45px;
 }
 
 #back-btn-show {
-    color: #2C3E50 !important;
+    color: white !important;
     position: relative;
     top: 35px;
     text-align: left;
 }
 #back-btn-edit {
-    color: #2C3E50 !important;
+    color: white !important;
     position: relative;
     top: 45px;
     text-align: left;
 }
 #back-btn-actor {
-    color: #2C3E50 !important;
+    color: white !important;
     position: relative;
     top: -2px;
     text-align: left;
 }
 .sign_out_position {
-    color: #2C3E50  !important;
+    color: white  !important;
     position: relative;
     text-align: right;
     top: 20px;
 }
 
 .sign_out_position_index {
-    color: #2C3E50  !important;
+    color: white  !important;
     position: relative;
     text-align: right;
     top: 40px;
@@ -57,4 +65,24 @@
 
 .index-table {
     width: 315px !important;
+}
+
+.options-color {
+    color: #18BC9C !important;
+}
+
+a {
+    color: #18BC9C !important;
+}
+
+input {
+    color: black !important;
+}
+
+tbody {
+    color: white;
+}
+
+.black-description {
+    color: black;
 }

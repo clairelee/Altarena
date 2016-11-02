@@ -73,7 +73,7 @@
               <% if current_user %>
                 Signed in as <strong><%= current_user.name %></strong>!
                 <div class="text-white">
-                  <%= link_to "Create note", new_note_path %>
+                  <%= link_to "Create note", new_note_path%>
                   <%= link_to "My notes", notes_path %>
                   <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 </div>
@@ -89,6 +89,4 @@
         </div>
         
     </header>
-    
-
 </body>

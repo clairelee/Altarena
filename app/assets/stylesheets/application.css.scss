@@ -16,3 +16,41 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#mainNav {
+    background: white;
+    font-weight: 700;
+    border: none;
+}
+
+.navbar-brand {
+    color: #18BC9C !important;
+}
+
+.navbar-right {
+    color: #18BC9C !important;
+}
+
+.footer-above {
+    background-color: #18BC9C !important;
+}
+
+.navbar-green {
+    color: #18BC9C !important;
+}
+
+.footer-title {
+    color: white !important;
+}
+
+h3 {
+    color: white !important;
+}
+
+.btn-social {
+    color: white !important;
+}
+
+a {
+    color: white !important;
+}

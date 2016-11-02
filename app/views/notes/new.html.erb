@@ -19,7 +19,9 @@
     <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
 <style>
 body {
-  background-color: #DCDCDC !important;
+  /*background-color: #DCDCDC !important;*/
+    background-color: #2C3E50 !important;
+
 }
 </style>
 </head>
@@ -81,7 +83,7 @@ body {
         <div class="sign_out_position">
           <% if current_user %>
           Signed in as <strong><%= current_user.name %></strong>!
-              <div>
+              <div class="options-color">
                 <%= link_to "Sign out", signout_path, id: "sign_out" %>
                 <%= link_to "My notes", notes_path %>
                 <%= link_to "Create note", new_note_path %>
