@@ -1,27 +1,60 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background: url(notes/notes_bg_img.jpg) no-repeat center center fixed;
-}
 
-p {
+.top_border {
     color: #2C3E50 !important;
+    border-top: 1px solid white;
+    padding-top: 5px;
 }
 
 .title {
     color: #2C3E50 !important;
+    font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
 
+#back-btn-new {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 50px;
+    right: 45px;
 }
-.bg-color {
-    background: #DCDCDC !important;
+
+#back-btn-show {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 35px;
+    text-align: left;
 }
-// .back-symbol {
-//     color: #2C3E50 !important;
+#back-btn-edit {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 45px;
+    text-align: left;
+}
+#back-btn-actor {
+    color: #2C3E50 !important;
+    position: relative;
+    top: -2px;
+    text-align: left;
+}
+.sign_out_position {
+    color: #2C3E50  !important;
+    position: relative;
+    text-align: right;
+    top: 20px;
+}
+
+.sign_out_position_index {
+    color: #2C3E50  !important;
+    position: relative;
+    text-align: right;
+    top: 40px;
+}
+// .next {
+//     text-align: center;
 // }
-// .sign_out_position {
-//     color: black !important;
-//     position: relative;
-//     bottom: -20px;
-//     left: 1285px;
-// }
+
+.index-table {
+    width: 315px !important;
+}

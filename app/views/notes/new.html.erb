@@ -17,7 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
-
+<style>
+body {
+  background-color: #DCDCDC !important;
+}
+</style>
 </head>
 
 <br>
@@ -25,13 +29,18 @@
 <br>
 <body>
 
-  <div class="container bg-color">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="title">New Note</h1>
+        <div class="card">
+          <div class="card-block">
+            <h1 class="title">New Note</h1>
+          </div>
+        </div>
+        
 
         <%= form_for :note, url: notes_path do |f| %>
-          <p>
+          <p class="top_border">
             <%= f.label :name %><br>
             <%= f.text_field :name %>
           </p>
@@ -46,7 +55,7 @@
             <%= f.text_field :role %>
           </p>
           
-          <p><b>Overall, Would you recommend/work with this person again?</b></p>
+          <p><b>Overall, would you recommend/work with this person again?</b></p>
           <fieldset id="rating">
             <input type="radio" name="note[rating]" value="5"> 5 Yes!!<br>
             <input type="radio" name="note[rating]" value="4"> 4 Yes<br>
@@ -63,10 +72,29 @@
             <input type="radio" name="note[attitude]" value="1"> 1 Difficult<br>
           </fieldset>
          <br>
-          <p>
+          <!--<button class="next">-->
             <%= f.submit "Next"%>
-          </p>
+          <!--</button>-->
+          <%= link_to 'Back', root_path, id: "back-btn-new" %>
           <% end %>
+        <br>  
+        <div class="sign_out_position">
+          <% if current_user %>
+          Signed in as <strong><%= current_user.name %></strong>!
+              <div>
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <%= link_to "My notes", notes_path %>
+                <%= link_to "Create note", new_note_path %>
+              </div>
+              <% else %>
+                <button class="btn-facebook btn-lg">
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                </button>
+                <button class="btn-linkedin btn-lg">
+                  <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+                </button>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>
