@@ -21,19 +21,74 @@
 </head>
    
 <body>
+  <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Directable</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll hidden-xs hidden-md hidden-sm hidden-lg">
+                        <a href="#create_note">Create Note</a>
+                    </li>
+                    <li class="page-scroll hidden-xs hidden-md hidden-sm hidden-lg">
+                        <a href="#my_notes">My Notes</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
                     <div class="intro-text">
-                        <span class="name">Directable</span>
+                        
+                        <div class="row">
+                            <span class="name">Directable</span>
+                            <img class="img-responsive" src="http://flaticons.net/icons/Miscellaneous/Clapper-Board.png" alt="" height=50 width=50>
+                        </div>
+                        
                         <hr class="star-light">
                         <span class="skills">Track Portfolios - Organize Notes - Share Data</span>
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
+            <div>
+              <% if current_user %>
+                Signed in as <strong><%= current_user.name %></strong>!
+                <div class="text-white">
+                  <%= link_to "Create note", new_note_path %>
+                  <%= link_to "My notes", notes_path %>
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                </div>
+              <% else %>
+                <button class="btn-facebook btn-lg">
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                </button>
+                <button class="btn-linkedin btn-lg">
+                  <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+                </button>
+              <% end %>
+            </div>
         </div>
+        
     </header>
+    
+
 </body>
