@@ -11,6 +11,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'omniauth-linkedin' 
 gem 'omniauth-facebook', '~> 1.4.1'
 
 # Use SCSS for stylesheets
