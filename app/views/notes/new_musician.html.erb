@@ -1,0 +1,26 @@
+<h1>New Note: Musician</h1>
+
+<%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
+  <p><b>A Star Sub?</b></p>
+  <fieldset id="star_sub">
+    <input type="radio" name="note[star_sub]" value="true"> Yes<br>
+    <input type="radio" name="note[star_sub]" value="false"> No<br>
+  </fieldset>
+  
+  <p><b>Musical Maturity & Experience</b></p>
+  <fieldset id="musical_maturity">
+    <input type="radio" name="note[musical_maturity]" value="4"> 4 Pro/Veteran<br>
+    <input type="radio" name="note[musical_maturity]" value="3"> 3 Solid<br>
+    <input type="radio" name="note[musical_maturity]" value="2"> 2 A few weaknesses but fine<br>
+    <input type="radio" name="note[musical_maturity]" value="1"> 1 Green<br>
+  </fieldset>
+  
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= f.submit "Create Note"%>
+  </p>
+<% end %>

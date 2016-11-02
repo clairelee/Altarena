@@ -1,0 +1,81 @@
+<h1>Edit Note</h1>
+
+<%= form_for :note, url: note_path(@note), method: :patch do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+ <p>
+    <%= f.label :production %><br>
+    <%= f.text_field :production %>
+  </p>
+  
+ <p>
+    <%= f.label :role %><br>
+    <%= f.text_field :role %>
+  </p>
+  
+  <p><b>Overall, Would you recommend/work with this person again?</b></p>
+  <fieldset id="rating">
+    <%= radio_button_tag("note[rating]", "5", (@note.rating == 5)) %> 5 Yes!!<br>
+    <%= radio_button_tag("note[rating]", "4", (@note.rating == 4)) %> 4 Yes<br>
+    <%= radio_button_tag("note[rating]", "3", (@note.rating == 3)) %> 3 I won't cast them, but I won't object<br>
+    <%= radio_button_tag("note[rating]", "2", (@note.rating == 2)) %> 2 Rather not<br>
+    <%= radio_button_tag("note[rating]", "1", (@note.rating == 1)) %> 1 Definitely not<br>
+  </fieldset>  
+  
+  <p><b>How is this person's attitude?</b></p>
+  <fieldset id="attitude">
+    <%= radio_button_tag("note[attitude]", "4", (@note.attitude == 4)) %> 4 Brings joy to every rehearsal<br>
+    <%= radio_button_tag("note[attitude]", "3", (@note.attitude == 3)) %> 3 Professional and easy to work with<br>
+    <%= radio_button_tag("note[attitude]", "2", (@note.attitude == 2)) %> 2 Sometimes needs managing<br>
+    <%= radio_button_tag("note[attitude]", "1", (@note.attitude == 1)) %> 1 Difficult<br>
+  </fieldset>
+  
+  <% if @note.role == "Musician" %>
+    <p><b>A Star Sub?</b></p>
+    <fieldset id="star_sub">
+      <%= radio_button_tag("note[star_sub]", "true", (@note.star_sub == true)) %> Yes<br>
+      <%= radio_button_tag("note[star_sub]", "false", (@note.star_sub == false)) %> No<br>
+    </fieldset>
+  
+    <p><b>Musical Maturity & Experience</b></p>
+    <fieldset id="musical_maturity">
+      <%= radio_button_tag("note[musical_maturity]", "4", (@note.musical_maturity == 4)) %> 4 Pro/Veteran<br>
+      <%= radio_button_tag("note[musical_maturity]", "3", (@note.musical_maturity == 3)) %> 3 Solid<br>
+      <%= radio_button_tag("note[musical_maturity]", "2", (@note.musical_maturity == 2)) %> 2 A few weaknesses but fine<br>
+      <%= radio_button_tag("note[musical_maturity]", "1", (@note.musical_maturity == 1)) %> 1 Green<br>
+    </fieldset>
+  <% end %>
+  
+  <% if @note.role == "Actor" or @note.role == "Actress" %>
+    <p><b>Reads music?</b></p>
+    <fieldset id="reads_music">
+      <%= radio_button_tag("note[reads_music]", "3", (@note.reads_music == 3)) %> 3 Very well<br>
+      <%= radio_button_tag("note[reads_music]", "2", (@note.reads_music == 2)) %> 2 Can work on their own, but not sightread<br>
+      <%= radio_button_tag("note[reads_music]", "1", (@note.reads_music == 1)) %> 1 No<br>
+    </fieldset>
+    
+    <p><b>Harmony singer?</b></p>
+    <fieldset id="harmony_singer">
+      <%= radio_button_tag("note[harmony_singer]", "4", (@note.harmony_singer == 4)) %> 4 Pro/Veteran<br>
+      <%= radio_button_tag("note[harmony_singer]", "3", (@note.harmony_singer == 3)) %> 3 Solidly teachable<br>
+      <%= radio_button_tag("note[harmony_singer]", "2", (@note.harmony_singer == 2)) %> 2 Teachable but weak<br>
+      <%= radio_button_tag("note[harmony_singer]", "1", (@note.harmony_singer == 1)) %> 1 No<br>
+    </fieldset>
+  <% end %>
+  
+  <p>
+    <%= f.label :descrption %><br>
+    <%= f.text_area :description %>
+  </p>
+  
+  
+  
+  <p>
+    <%= f.submit "Update"%>
+  </p>
+ 
+<%= link_to 'Back', root_path %>
+<% end %>
