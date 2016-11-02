@@ -2,5 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: url(home/home_bg_img.jpg) no-repeat center center fixed;
+  background: url(notes/notes_bg_img.jpg) no-repeat center center fixed;
 }
+
+p {
+    color: #2C3E50 !important;
+}
+
+.title {
+    color: #2C3E50 !important;
+
+}
+.bg-color {
+    background: #DCDCDC !important;
+}
+// .back-symbol {
+//     color: #2C3E50 !important;
+// }
+// .sign_out_position {
+//     color: black !important;
+//     position: relative;
+//     bottom: -20px;
+//     left: 1285px;
+// }
