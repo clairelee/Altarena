@@ -3,17 +3,17 @@
 <%= form_for @note, :url => notes_create_actor_path(:id => @note.id), :html => { :method => :post }  do |f| %>
     <p><b>Reads music?</b></p>
     <fieldset id="reads_music">
-      <input type="radio" name="note[reads_music]" value="3"> 3 Very well<br>
-      <input type="radio" name="note[reads_music]" value="2"> 2 Can work on their own, but not sightread<br>
-      <input type="radio" name="note[reads_music]" value="1"> 1 No<br>
+      <input type="radio" name="note[reads_music]" id="3 Very well" value="3"> 3 Very well<br>
+      <input type="radio" name="note[reads_music]" id="2 Can work on their own, but not sightread" value="2"> 2 Can work on their own, but not sightread<br>
+      <input type="radio" name="note[reads_music]" id="1 No" value="1"> 1 No<br>
     </fieldset>
     
     <p><b>Harmony singer?</b></p>
     <fieldset id="harmony_singer">
-      <input type="radio" name="note[harmony_singer]" value="4"> 4 Pro/Veteran<br>
-      <input type="radio" name="note[harmony_singer]" value="3"> 3 Solidly teachable<br>
-      <input type="radio" name="note[harmony_singer]" value="2"> 2 Teachable but weak<br>
-      <input type="radio" name="note[harmony_singer]" value="1"> 1 No<br>
+      <input type="radio" name="note[harmony_singer]" id="4 Pro/Veteran" value="4"> 4 Pro/Veteran<br>
+      <input type="radio" name="note[harmony_singer]" id="3 Solidly teachable" value="3"> 3 Solidly teachable<br>
+      <input type="radio" name="note[harmony_singer]" id="2 Teachable but weak" value="2"> 2 Teachable but weak<br>
+      <input type="radio" name="note[harmony_singer]" id="1 No" value="1"> 1 No<br>
     </fieldset>
     
     <p>

@@ -4,31 +4,61 @@ Feature: Create Notes
   I want to create notes about them
   
   Background:
-    Given I am on the New Page
+    Given I am on the Notes page
+    And the following notes exist:
+    |name    |role |
+    |John Ho |Actor|
+  Scenario: Add an actor note
+    When I go to the Create notes page
+    And I fill in "Name" with "Calley Wang"
+    And I fill in "Production" with "Lion King"
+    And I fill in "Role" with "Actor"
+    And I choose "5 Yes!!"
+    And I choose "4 Brings joy to every rehearsal"
+    And I press "Next"
+    Then I should be on the new actor notes page
+    And I choose "3 Very well"
+    And I choose "4 Pro/Veteran"
+    And I fill in "Description" with "All around good guy"
+    And I press "Create Note"
+    Then I should be on the view notes page for "Calley Wang"
+    And I should see "Calley Wang" 
+    And I should see "Lion King"
+    And I should see "Actor"
+    And I should see "All around good guy"
     
-  Scenario: Add note
-    When I select "Lion King"
-    And I fill in "First_Name" with "Calley"
-    And I fill in "Last_Name" with "Wang"" 
-    And I check "Actor"
-    And I fill in "note" with "Great acting ability, always on time"
-    And I press "Create"
-   Then I should be on the home page
-   And there is an entry that says "Lion King" "Calley" "Wang" "Actor" "Great acting ability, always on time"
-   
+  Scenario: Add a musician note
+    When I go to the Create notes page
+    And I fill in "Name" with "Gunsoo Kim"
+    And I fill in "Production" with "Mulan"
+    And I fill in "Role" with "Musician"
+    And I choose "1 Definitely not"
+    And I choose "1 Difficult"
+    And I press "Next"
+    Then I should be on the new musician notes page
+    And I choose "No"
+    And I choose "1 Green"
+    And I fill in "Description" with "Never work with him again"
+    And I press "Create Note"
+    Then I should be on the view notes page for "Gunsoo Kim"
+    And I should see "Gunsoo Kim" 
+    And I should see "Mulan"
+    And I should see "Musician"
+    And I should see "Never work with him again"
+    
   Scenario: Edit note
-    Given I am on a note page
-    When I click "Edit"
-    Then I fill in "note" with "Great acting ability, sometimes on time"
-    And I click "save"
-    Then I should be on note page
-    And it should say "Lion King" "Calley" "Wang" "Actor" "Great acting ability, sometimes on time"
+    Given I am on the notes page
+    When I follow "Edit"
+    Then I should be on the edit notes page for "John Ho"
+    When I fill in "Name" with "Karan Das"
+    And I press "Update"
+    Then I should see "Karan Das"
     
   Scenario: Delete note
-    Given I am on a note page
-    When I click "Delete"
-    Then I should be on note page
-    And it should say not "Lion King" "Calley" "Wang" "Actor" "Great acting ability, sometimes on time"
+    Given I am on the notes page
+    When I follow "Delete"
+    Then I should be on the notes page
+    And I should not see "John Ho"
   
   # Background:
   #   Given a dummy production exists
