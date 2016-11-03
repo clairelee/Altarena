@@ -1,19 +1,19 @@
 <h1>New Note: Musician</h1>
 
 <%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
-  <p><b>A Star Sub?</b></p>
-  <fieldset id="star_sub">
-    <input type="radio" name="note[star_sub]" id="Yes" value="true"> Yes<br>
-    <input type="radio" name="note[star_sub]" id="No" value="false"> No<br>
-  </fieldset>
+  <p>
+    <b>A Star Sub?</b><br />
+    <%= f.radio_button :star_sub, 'true' %> Yes<br />
+    <%= f.radio_button :star_sub, 'false' %> No<br />
+  </p>
   
-  <p><b>Musical Maturity & Experience</b></p>
-  <fieldset id="musical_maturity">
-    <input type="radio" name="note[musical_maturity]" id="4 Pro/Veteran" value="4"> 4 Pro/Veteran<br>
-    <input type="radio" name="note[musical_maturity]" id="3 Solid" value="3"> 3 Solid<br>
-    <input type="radio" name="note[musical_maturity]" id="2 A few weaknesses but fine" value="2"> 2 A few weaknesses but fine<br>
-    <input type="radio" name="note[musical_maturity]" id="1 Green" value="1"> 1 Green<br>
-  </fieldset>
+  <p>
+    <b>Musical Maturity & Experience</b><br />
+    <%= f.radio_button :musical_maturity, '4' %> 4 Pro/Veteran<br />
+    <%= f.radio_button :musical_maturity, '3' %> 3 Solid<br />
+    <%= f.radio_button :musical_maturity, '2' %> 2 A few weaknesses but fine<br />
+    <%= f.radio_button :musical_maturity, '1' %> 1 Green<br />
+  </p>
   
   <p>
     <%= f.label :description %><br>
