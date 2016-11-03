@@ -12,7 +12,7 @@ group :production do
 end
 
 gem 'omniauth-linkedin' 
-gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth-facebook'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
