@@ -9,7 +9,6 @@ Feature: Third Party Authentication
     
   Scenario: Successfully Login through Facebook
     When I press "Login_Facebook"
-    And I press "Okay"
     Then I should be on the home page
     
   Scenario: Redirect to LinkedIn Login page
