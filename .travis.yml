@@ -1,6 +1,10 @@
 language: ruby
 rvm:
  - 2.2.2
+ 
+addons:
+ code_climate:
+   repo_token: 0f51d947343d1511d7b95f97c0388597c6b1320b1e3326cdc980523e1163bd92
 
 notifications:
   slack: cs169hq:wTi1MskoeU1BrdO8vWqPLE3j
