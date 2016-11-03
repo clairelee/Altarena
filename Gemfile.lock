@@ -366,7 +366,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   metric_fu
-  omniauth-facebook (~> 1.4.1)
+  omniauth-facebook
   omniauth-linkedin
   pg
   rails (= 4.2.6)

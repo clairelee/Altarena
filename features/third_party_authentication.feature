@@ -7,10 +7,14 @@ Feature: Third Party Authentication
   Background:
     Given I am on the home page
     
+  @omniauth_test_success
   Scenario: Successfully Login through Facebook
-    When I press "Login_Facebook"
+    When I follow "Sign in with Facebook"
     Then I should be on the home page
     
-  Scenario: Redirect to LinkedIn Login page
-    When I press "Login_LinkedIn"
+  @omniauth_test_success
+  Scenario: Successfully Login through LinkedIn
+    When I follow "Sign in with Linkedin"
     Then I should be on the home page
+    
+# https://github.com/omniauth/omniauth/wiki/Integration-Testing
