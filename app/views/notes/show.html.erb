@@ -35,7 +35,7 @@
   </p>
 <% end %>
 
-<% if @note.role == "Actor" or @note.role == "Actress" %>
+<% if @note.role == "Actor/Actress" %>
   <p>
     <strong>Reads Music:</strong>
     <%= @note_fields["reads_music"][@note.reads_music] %>

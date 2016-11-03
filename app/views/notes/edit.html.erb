@@ -49,7 +49,7 @@
     </fieldset>
   <% end %>
   
-  <% if @note.role == "Actor" or @note.role == "Actress" %>
+  <% if @note.role == "Actor/Actress" %>
     <p><b>Reads music?</b></p>
     <fieldset id="reads_music">
       <%= radio_button_tag("note[reads_music]", "3", (@note.reads_music == 3)) %> 3 Very well<br>
