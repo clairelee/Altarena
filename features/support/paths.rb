@@ -18,7 +18,19 @@ module NavigationHelpers
     when /^the Login page$/
       pending
     when /^the Notes page$/
-      pending
+      '/notes'
+    when /^the Create notes page$/
+      '/notes/new'
+    when /^the new actor notes page$/
+      '/notes_new_actor'
+    when /^the new musician notes page$/
+      '/notes_new_musician'
+    when /^the view notes page for "([^"]+)"$/
+      note = Note.find_by_name($1)
+      note_path(note.id)
+    when /^the edit notes page for "([^"]+)"$/
+      note = Note.find_by_name($1)
+      edit_note_path(note.id)
     when /^the Production page$/
       pending
     when /^the Create Profile page$/
