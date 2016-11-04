@@ -1,26 +1,71 @@
-<h1>New Note: Musician</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directable</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
-  <p>
-    <b>A Star Sub?</b><br />
-    <%= f.radio_button :star_sub, 'true' %> Yes<br />
-    <%= f.radio_button :star_sub, 'false' %> No<br />
-  </p>
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+<style>
+body {
+  /*background-color: #DCDCDC !important;*/
+    background-color: #2C3E50 !important;
+
+}
+</style>
+</head>
+
+<br>
+<br>
+<br>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">New Note: Musician</h1>
+
+        <%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
+          <p class="top_border"><b>A Star Sub?</b></p>
+          <fieldset id="star_sub">
+            <input type="radio" name="note[star_sub]" value="true"> Yes<br>
+            <input type="radio" name="note[star_sub]" value="false"> No<br>
+          </fieldset>
+          
+          <p><b>Musical Maturity & Experience</b></p>
+          <fieldset id="musical_maturity">
+            <input type="radio" name="note[musical_maturity]" value="4"> 4 Pro/Veteran<br>
+            <input type="radio" name="note[musical_maturity]" value="3"> 3 Solid<br>
+            <input type="radio" name="note[musical_maturity]" value="2"> 2 A few weaknesses but fine<br>
+            <input type="radio" name="note[musical_maturity]" value="1"> 1 Green<br>
+          </fieldset>
+          
+          <p>
+            <%= f.label :description %><br>
+            <div class="black-description">
+              <%= f.text_area :description %>
+            </div>
+          </p>
+          
+          <p>
+            <%= f.submit "Create Note"%>
+          </p>
+          <br>
+          <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   
-  <p>
-    <b>Musical Maturity & Experience</b><br />
-    <%= f.radio_button :musical_maturity, '4' %> 4 Pro/Veteran<br />
-    <%= f.radio_button :musical_maturity, '3' %> 3 Solid<br />
-    <%= f.radio_button :musical_maturity, '2' %> 2 A few weaknesses but fine<br />
-    <%= f.radio_button :musical_maturity, '1' %> 1 Green<br />
-  </p>
-  
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-  
-  <p>
-    <%= f.submit "Create Note"%>
-  </p>
-<% end %>
+</body>

@@ -1,55 +1,119 @@
-<p>
-  <strong>Name:</strong>
-  <%= @note.name %>
-</p>
-
-<p>
-  <strong>Production:</strong>
-  <%= @note.production %>
-</p>
- 
-<p>
-  <strong>Role:</strong>
-  <%= @note.role %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @note.rating %>
-</p>
-
-<p>
-  <strong>Attitude:</strong>
-  <%= @note_fields["attitude"][@note.attitude] %>
-</p>
-
-<% if @note.role == "Musician" %>
-  <p>
-    <strong>Star Sub:</strong>
-    <%= @note_fields["star_sub"][@note.star_sub] %>
-  </p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directable</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
   
-  <p>
-    <strong>Musical Maturity:</strong>
-    <%= @note_fields["musical_maturity"][@note.musical_maturity] %>
-  </p>
-<% end %>
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<% if @note.role == "Actor" or @note.role == "Actress" %>
-  <p>
-    <strong>Reads Music:</strong>
-    <%= @note_fields["reads_music"][@note.reads_music] %>
-  </p>
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+<style>
+body {
+  /*background-color: #DCDCDC !important;*/
+  background-color: #2C3E50 !important;
+}
+</style>
+</head>
+
+<br>
+<br>
+<br>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">Note</h1>
+        <p class="top_border">
+          <strong>Name:</strong>
+          <%= @note.name %>
+        </p>
+        
+        <p>
+          <strong>Production:</strong>
+          <%= @note.production %>
+        </p>
+         
+        <p>
+          <strong>Role:</strong>
+          <%= @note.role %>
+        </p>
+        
+        <p>
+          <strong>Rating:</strong>
+          <%= @note.rating %>
+        </p>
+        
+        <p>
+          <strong>Attitude:</strong>
+          <%= @note_fields["attitude"][@note.attitude] %>
+        </p>
+        
+        <% if @note.role == "Musician" %>
+          <p>
+            <strong>Star Sub:</strong>
+            <%= @note_fields["star_sub"][@note.star_sub] %>
+          </p>
+          
+          <p>
+            <strong>Musical Maturity:</strong>
+            <%= @note_fields["musical_maturity"][@note.musical_maturity] %>
+          </p>
+        <% end %>
+        
+        <% if @note.role == "Actor" or @note.role == "Actress" %>
+          <p>
+            <strong>Reads Music:</strong>
+            <%= @note_fields["reads_music"][@note.reads_music] %>
+          </p>
+          
+          <p>
+            <strong>Harmony Singer:</strong>
+            <%= @note_fields["harmony_singer"][@note.harmony_singer] %>
+          </p>
+        <% end %>
+        
+        <p>
+          <strong>Description:</strong>
+          <%= @note.description %>
+        </p>
+        
+        <%= link_to 'Back', notes_path, id: "back-btn-show" %>
+        
+        <div class="sign_out_position">
+          <% if current_user %>
+          Signed in as <strong><%= current_user.name %></strong>!
+          <div>
+            
+            <div class="hidden-xs hidden-sm hidden-md hidden-lg">
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              <%= link_to "My notes", notes_path %>
+              <%= link_to "Create note", new_note_path %>
+            </div>
+            
+          </div>
+          <% else %>
+            <button class="btn-facebook btn-lg">
+              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            </button>
+            <button class="btn-linkedin btn-lg">
+              <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+            </button>
+          <% end %>
+        </div>
+      
+      </div>
+    </div>
+  </div>
   
-  <p>
-    <strong>Harmony Singer:</strong>
-    <%= @note_fields["harmony_singer"][@note.harmony_singer] %>
-  </p>
-<% end %>
-
-<p>
-  <strong>Description:</strong>
-  <%= @note.description %>
-</p>
-
-<%= link_to 'Back', notes_path %>
+</body>

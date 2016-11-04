@@ -1,3 +1,92 @@
-<h1>Home#show</h1>
-<p>Find me in app/views/home/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directable</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+
+</head>
+   
+<body>
+  <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Directable</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll hidden-xs hidden-md hidden-sm hidden-lg">
+                        <a href="#create_note">Create Note</a>
+                    </li>
+                    <li class="page-scroll hidden-xs hidden-md hidden-sm hidden-lg">
+                        <a href="#my_notes">My Notes</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        
+                        <div class="row">
+                            <span class="name">Directable</span>
+                            <img class="img-responsive" src="http://flaticons.net/icons/Miscellaneous/Clapper-Board.png" alt="" height=50 width=50>
+                        </div>
+                        
+                        <hr class="star-light">
+                        <span class="skills">Track Portfolios - Organize Notes - Share Data</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div>
+              <% if current_user %>
+                Signed in as <strong><%= current_user.name %></strong>!
+                <div class="text-white">
+                  <%= link_to "Create note", new_note_path%>
+                  <%= link_to "My notes", notes_path %>
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                </div>
+              <% else %>
+                <button class="btn-facebook btn-lg">
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                </button>
+                <button class="btn-linkedin btn-lg">
+                  <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+                </button>
+              <% end %>
+            </div>
+        </div>
+        
+    </header>
+</body>

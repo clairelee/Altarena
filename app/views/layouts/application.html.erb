@@ -5,20 +5,134 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+
 </head>
 <body>
+<!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href=/#_=_>Directable</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="navbar-green" href=/notes/new>Create Note</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="navbar-green" href=/notes>My Notes</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a class="navbar-green" href=/signout>Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    
+        <!-- Header -->
+    <!--<header>-->
+    <!--    <div class="container">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-lg-12">-->
+    <!--                <img class="img-responsive" src="img/profile.png" alt="">-->
+    <!--                <div class="intro-text">-->
+    <!--                    <span class="name">Directable</span>-->
+    <!--                    <hr class="star-light">-->
+    <!--                    <span class="skills">Track Portfolios - Organize Notes - Share Data</span>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</header>-->
+  
 <div>
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <%= link_to "Create notes", new_note_path %>
-    <%= link_to "My notes", notes_path %>
+        <div class="text-white">
+          <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <%= link_to "Create notes", new_note_path %>
+          <%= link_to "My notes", notes_path %>
+        </div>
   <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+    <button class="btn-facebook btn-lg">
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </button>
+    <button class="btn-linkedin btn-lg">
+        <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+    </button>
   <% end %>
 </div>
+
 <%= yield %>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3 class="footer-title">About</h3>
+                        <p class="footer-title"> Directable allows you to leave review, rate,
+                        and connect with your peers in your theatrical community!</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3 class="footer-title">Share Directable Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a class="footer-title" href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="footer-title" href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a class="footer-title" href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="footer-title" href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3 class="footer-title">Suggestions on improvements?</h3>
+                        <p class="footer-title">Email Us <a class="footer-title" href="cs169directable@gmail.com">Here!</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; directable.herokuapp.com 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -1,3 +1,88 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top_border {
+    color: white !important;
+    border-top: 1px solid white;
+    padding-top: 5px;
+}
+label {
+    color: white !important;
+}
+p {
+    color: white !important;
+}
+fieldset {
+    color: white !important;
+}
+.title {
+    color: white !important;
+    font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+#back-btn-new {
+    color: white !important;
+    position: relative;
+    top: 50px;
+    right: 45px;
+}
+
+#back-btn-show {
+    color: white !important;
+    position: relative;
+    top: 35px;
+    text-align: left;
+}
+#back-btn-edit {
+    color: white !important;
+    position: relative;
+    top: 45px;
+    text-align: left;
+}
+#back-btn-actor {
+    color: white !important;
+    position: relative;
+    top: -2px;
+    text-align: left;
+}
+.sign_out_position {
+    color: white  !important;
+    position: relative;
+    text-align: right;
+    top: 20px;
+}
+
+.sign_out_position_index {
+    color: white  !important;
+    position: relative;
+    text-align: right;
+    top: 40px;
+}
+// .next {
+//     text-align: center;
+// }
+
+.index-table {
+    width: 315px !important;
+}
+
+.options-color {
+    color: #18BC9C !important;
+}
+
+a {
+    color: #18BC9C !important;
+}
+
+input {
+    color: black !important;
+}
+
+tbody {
+    color: white;
+}
+
+.black-description {
+    color: black;
+}
