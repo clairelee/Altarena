@@ -1,27 +1,74 @@
-<h1>New Note: Actor/Actress</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directable</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<%= form_for @note, :url => notes_create_actor_path(:id => @note.id), :html => { :method => :post }  do |f| %>
-    <p>
-      <b>Reads music?</b><br />
-      <%= f.radio_button :reads_music, '3' %> 3 Very well<br />
-      <%= f.radio_button :reads_music, '2' %> 2 Can work on their own, but not sightread<br />
-      <%= f.radio_button :reads_music, '1' %> 1 No<br />
-    </p>
-    
-    <p>
-      <b>Harmony singer?</b><br />
-      <%= f.radio_button :harmony_singer, '4' %> 4 Pro/Veteran<br />
-      <%= f.radio_button :harmony_singer, '3' %> 3 Solidly teachable<br />
-      <%= f.radio_button :harmony_singer, '2' %> 2 Teachable but weak<br />
-      <%= f.radio_button :harmony_singer, '1' %> 1 No<br />
-    </p>
-    
-    <p>
-      <%= f.label :description %><br>
-      <%= f.text_area :description %>
-    </p>
-    
-    <p>
-      <%= f.submit "Create Note"%>
-    </p>
-<% end %>
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+<style>
+body {
+  /*background-color: #DCDCDC !important;*/
+    background-color: #2C3E50 !important;
+
+}
+</style>
+</head>
+
+<br>
+<br>
+<br>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">New Note: Actor/Actress</h1>
+
+        <%= form_for @note, :url => notes_create_actor_path(:id => @note.id), :html => { :method => :post }  do |f| %>
+            <p>
+              <b>Reads music?</b><br />
+              <%= f.radio_button :reads_music, '3' %> 3 Very well<br />
+              <%= f.radio_button :reads_music, '2' %> 2 Can work on their own, but not sightread<br />
+              <%= f.radio_button :reads_music, '1' %> 1 No<br />
+            </p>
+            
+            <p>
+              <b>Harmony singer?</b><br />
+              <%= f.radio_button :harmony_singer, '4' %> 4 Pro/Veteran<br />
+              <%= f.radio_button :harmony_singer, '3' %> 3 Solidly teachable<br />
+              <%= f.radio_button :harmony_singer, '2' %> 2 Teachable but weak<br />
+              <%= f.radio_button :harmony_singer, '1' %> 1 No<br />
+            </p>
+            
+            <p>
+              <%= f.label :description %><br>
+              <div class="black-description">
+                <%= f.text_area :description %>
+              </div>
+              
+            </p>
+            
+            <p>
+              <%= f.submit "Create Note"%>
+            </p>
+            <br>
+            <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</body>
+

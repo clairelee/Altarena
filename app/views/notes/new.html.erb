@@ -1,41 +1,75 @@
-<h1>New Note</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Directable</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 
-<%= form_for :note, url: notes_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  
-  <p>
-    <%= f.label :production %><br>
-    <%= f.text_field :production %> 
-  </p>
-  
-  <p>
-    <%= f.label :role %><br>
-    <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
-  </p>
-  
-  <p>
-    <b>Overall, Would you recommend/work with this person again?</b><br />
-    <%= f.radio_button :rating, '5' %> 5 Yes!!<br />
-    <%= f.radio_button :rating, '4' %> 4 Yes<br />
-    <%= f.radio_button :rating, '3' %> 3 I won't cast them, but I won't object<br />
-    <%= f.radio_button :rating, '2' %> 2 Rather not<br />
-    <%= f.radio_button :rating, '1' %> 1 Definitely not<br />
-  </p>
-  
-  <p>
-    <b>How is this person's attitude?</b><br />
-    <%= f.radio_button :attitude, '4' %> 4 Brings joy to every rehearsal<br />
-    <%= f.radio_button :attitude, '3' %> 3 Professional and easy to work with<br />
-    <%= f.radio_button :attitude, '2' %> 2 Sometimes needs managing<br />
-    <%= f.radio_button :attitude, '1' %> 1 Difficult<br />
-  </p>
- 
-  <p>
-    <%= f.submit "Next"%>
-  </p>
- 
-<%= link_to 'Back', root_path %>
-<% end %>
+  <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-freelancer/css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
+
+</head>
+<br>
+<br>
+<br>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>New Note</h1>
+
+        <%= form_for :note, url: notes_path do |f| %>
+          <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </p>
+          
+          <p>
+            <%= f.label :production %><br>
+            <%= f.text_field :production %> 
+          </p>
+          
+          <p>
+            <%= f.label :role %><br>
+            <%= f.text_field :role %>
+          </p>
+          
+          <p>
+            <b>Overall, Would you recommend/work with this person again?</b><br />
+            <%= f.radio_button :rating, '5' %> 5 Yes!!<br />
+            <%= f.radio_button :rating, '4' %> 4 Yes<br />
+            <%= f.radio_button :rating, '3' %> 3 I won't cast them, but I won't object<br />
+            <%= f.radio_button :rating, '2' %> 2 Rather not<br />
+            <%= f.radio_button :rating, '1' %> 1 Definitely not<br />
+          </p>
+          
+          <p>
+            <b>How is this person's attitude?</b><br />
+            <%= f.radio_button :attitude, '4' %> 4 Brings joy to every rehearsal<br />
+            <%= f.radio_button :attitude, '3' %> 3 Professional and easy to work with<br />
+            <%= f.radio_button :attitude, '2' %> 2 Sometimes needs managing<br />
+            <%= f.radio_button :attitude, '1' %> 1 Difficult<br />
+          </p>
+         
+          <p>
+            <%= f.submit "Next"%>
+          </p>
+           
+          <%= link_to 'Back', root_path %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

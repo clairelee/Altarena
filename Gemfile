@@ -14,6 +14,8 @@ end
 gem 'omniauth-linkedin' 
 gem 'omniauth-facebook'
 
+gem 'bootstrap-sass'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
