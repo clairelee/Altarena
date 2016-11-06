@@ -49,24 +49,23 @@
             <%= f.text_field :role %>
           </p>
           
-          <p><b>Overall, Would you recommend/work with this person again?</b></p>
-          <fieldset id="rating">
-            <input type="radio" name="note[rating]" value="5"> 5 Yes!!<br>
-            <input type="radio" name="note[rating]" value="4"> 4 Yes<br>
-            <input type="radio" name="note[rating]" value="3"> 3 I won't cast them, but I won't object<br>
-            <input type="radio" name="note[rating]" value="2"> 2 Rather not<br>
-            <input type="radio" name="note[rating]" value="1"> 1 Definitely not<br>
-          </fieldset>
+          <p>
+            <b>Overall, Would you recommend/work with this person again?</b><br />
+            <%= f.radio_button :rating, '5' %> 5 Yes!!<br />
+            <%= f.radio_button :rating, '4' %> 4 Yes<br />
+            <%= f.radio_button :rating, '3' %> 3 I won't cast them, but I won't object<br />
+            <%= f.radio_button :rating, '2' %> 2 Rather not<br />
+            <%= f.radio_button :rating, '1' %> 1 Definitely not<br />
+          </p>
           
-          <p><b>How is this person's attitude?</b></p>
-          <fieldset id="attitude">
-            <input type="radio" name="note[attitude]" value="4"> 4 Brings joy to every rehearsal<br>
-            <input type="radio" name="note[attitude]" value="3"> 3 Professional and easy to work with<br>
-            <input type="radio" name="note[attitude]" value="2"> 2 Sometimes needs managing<br>
-            <input type="radio" name="note[attitude]" value="1"> 1 Difficult<br>
-          </fieldset>
-        
-          <br>        
+          <p>
+            <b>How is this person's attitude?</b><br />
+            <%= f.radio_button :attitude, '4' %> 4 Brings joy to every rehearsal<br />
+            <%= f.radio_button :attitude, '3' %> 3 Professional and easy to work with<br />
+            <%= f.radio_button :attitude, '2' %> 2 Sometimes needs managing<br />
+            <%= f.radio_button :attitude, '1' %> 1 Difficult<br />
+          </p>
+         
           <p>
             <%= f.submit "Next"%>
           </p>

@@ -40,7 +40,7 @@ class NotesController < ApplicationController
         @note = Note.create!(note_params)
         if @note.role == "Musician"
             redirect_to notes_new_musician_path(:id => @note.id)
-        elsif @note.role == "Actor" or @note.role == "Actress"
+        elsif @note.role == "Actor/Actress"
             redirect_to notes_new_actor_path(:id => @note.id)
         else
             redirect_to note_path(@note)
