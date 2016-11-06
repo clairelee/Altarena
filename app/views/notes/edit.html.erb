@@ -50,7 +50,7 @@ body {
           
          <p>
             <%= f.label :role %><br>
-            <%= f.text_field :role %>
+            <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
           </p>
           
           <p><b>Overall, Would you recommend/work with this person again?</b></p>
@@ -101,7 +101,7 @@ body {
             </fieldset>
           <% end %>
           
-          <% if @note.role == "Actor" or @note.role == "Actress" %>
+          <% if @note.role == "Actor/Actress" %>
             <p><b>Reads music?</b></p>
             <fieldset id="reads_music">
               <%= radio_button_tag("note[reads_music]", "3", (@note.reads_music == 3)) %> Very well<br>
