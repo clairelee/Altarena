@@ -17,7 +17,12 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <script src="https://use.fontawesome.com/2590d0dbef.js"></script>
-
+<style>
+  body {
+  /*background-color: #DCDCDC !important;*/
+    background-color: #2C3E50 !important;
+}
+</style>
 </head>
 <br>
 <br>
@@ -26,10 +31,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1>New Note</h1>
+        <h1 class="title">New Note</h1>
 
         <%= form_for :note, url: notes_path do |f| %>
-          <p>
+          <p class="top_border">
             <%= f.label :name %><br>
             <%= f.text_field :name %>
           </p>
@@ -60,7 +65,8 @@
             <input type="radio" name="note[attitude]" value="2"> 2 Sometimes needs managing<br>
             <input type="radio" name="note[attitude]" value="1"> 1 Difficult<br>
           </fieldset>
-         
+        
+          <br>        
           <p>
             <%= f.submit "Next"%>
           </p>
