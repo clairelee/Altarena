@@ -50,7 +50,9 @@ body {
           
          <p>
             <%= f.label :role %><br>
-            <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+            <div class="black-role">
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+            </div>
           </p>
           
           <p><b>Overall, Would you recommend/work with this person again?</b></p>
