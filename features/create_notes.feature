@@ -8,6 +8,7 @@ Feature: Create Notes
     And the following notes exist:
     |name    |role |
     |John Ho |Actor|
+    
   Scenario: Add an actor note
     When I go to the Create notes page
     And I fill in "Name" with "Calley Wang"
@@ -59,6 +60,11 @@ Feature: Create Notes
     When I follow "Delete"
     Then I should be on the notes page
     And I should not see "John Ho"
+    
+  Scenario: Empty note
+    When I go to the Create notes page
+    And I press "Next"
+    Then I should see "Invalid submission"
   
   # Background:
   #   Given a dummy production exists
