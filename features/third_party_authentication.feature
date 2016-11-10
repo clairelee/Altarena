@@ -18,3 +18,13 @@ Feature: Third Party Authentication
     Then I should be on the home page
     
 # https://github.com/omniauth/omniauth/wiki/Integration-Testing
+
+  Scenario: Connect LinkedIn to Facebook
+    When I am logged in with Facebook
+    Then I connect with LinkedIn
+    Then I should be on the home page
+  
+  Scenario: Connect Facebook to LinkedIn
+    When I am logged in with LinkedIn
+    Then I connect with Facebook
+    Then I should be on the home page
