@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
     def new
+        @note = Note.new
     end
     
     def new_musician
@@ -37,13 +38,17 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = Note.create!(note_params)
-        if @note.role == "Musician"
-            redirect_to notes_new_musician_path(:id => @note.id)
-        elsif @note.role == "Actor/Actress"
-            redirect_to notes_new_actor_path(:id => @note.id)
+        @note = Note.new(note_params)
+        if @note.save
+            if @note.role == "Musician"
+                redirect_to notes_new_musician_path(:id => @note.id)
+            elsif @note.role == "Actor/Actress"
+                redirect_to notes_new_actor_path(:id => @note.id)
+            else
+                redirect_to note_path(@note)
+            end
         else
-            redirect_to note_path(@note)
+            redirect_to new_note_path
         end
     end
     
@@ -51,8 +56,7 @@ class NotesController < ApplicationController
         id = params[:id]
         @note = Note.find(id)
         @note.update(note_params)
-        @note.save
-        
+
         redirect_to note_path(@note)
     end
     
