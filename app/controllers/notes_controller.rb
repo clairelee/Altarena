@@ -1,34 +1,35 @@
 class NotesController < ApplicationController
+    before_action :get_user
     def new
-        @note = Note.new
+        @note = @user.notes.new
     end
     
     def new_musician
         id = params[:id]
-        @note = Note.find(id)
+        @note = @user.notes.find(id)
     end
     
     def new_actor
         id = params[:id]
-        @note = Note.find(id)
+        @note = @user.notes.find(id)
     end
     
     def index
-        @notes = Note.all
+        @notes = @user.notes.all
     end
     
     def show
-        @note = Note.find(params[:id])
+        @note = @user.notes.find(params[:id])
         @note_fields = note_fields
     end
     
     def edit
-        @note = Note.find(params[:id])
+        @note = @user.notes.find(params[:id])
         @note_fields = note_fields
     end
     
     def update
-        @note = Note.find(params[:id])
+        @note = @user.notes.find(params[:id])
         if @note.update(note_params)
             flash[:notice] = "#{@note.name} was successfully updated."
             redirect_to note_path(@note)
@@ -38,7 +39,7 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = Note.new(note_params)
+        @note = @user.notes.new(note_params)
         if @note.save
             if @note.role == "Musician"
                 redirect_to notes_new_musician_path(:id => @note.id)
@@ -55,7 +56,7 @@ class NotesController < ApplicationController
     
     def create_musician
         id = params[:id]
-        @note = Note.find(id)
+        @note = @user.notes.find(id)
         @note.update(note_params)
 
         redirect_to note_path(@note)
@@ -63,7 +64,7 @@ class NotesController < ApplicationController
     
     def create_actor
         id = params[:id]
-        @note = Note.find(id)
+        @note = @user.notes.find(id)
         @note.update(note_params)
         @note.save
         
@@ -71,7 +72,7 @@ class NotesController < ApplicationController
     end
     
     def destroy
-        @note = Note.find(params[:id])
+        @note = @user.notes.find(params[:id])
         @note.destroy
         flash[:notice] = "Note was deleted."
         redirect_to notes_path
@@ -107,6 +108,10 @@ class NotesController < ApplicationController
         
         def note_fields
             {"attitude"=>{4=>"Brings joy to every rehearsal", 3=>"Professional and easy to work with", 2=>"Sometimes needs managing", 1=>"Difficult"}, "rating"=>{5=>"Yes!!", 4=>"Yes", 3=>"I won't cast them, but I won't object", 2=>"Rather not", 1=>"Definitely not"}, "star_sub"=>{true=>"Yes", false=>"No"},"reads_music"=>{3=>"Very well", 2=>"Can work on their own, but not sightread", 1=>"No"}, "harmony_singer"=>{4=>"Pro/Veteran", 3=>"Solidly teachable", 2=>"Teachable but weak", 1=>"No"}, "musical_maturity"=>{4=>"Pro/Veteran", 3=>"Solid", 2=>"A few weaknesses but fine", 1=>"Green"}}
+        end
+        
+        def get_user
+            @user = User.find(session[:user_id])
         end
         
         
