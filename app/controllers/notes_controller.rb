@@ -84,7 +84,7 @@ class NotesController < ApplicationController
         
     end
     def search
-        @search_result = Note.all
+        @search_result = @user.notes.all
         if note_params[:name] != ""
             @search_result = @search_result.where("name = ?", note_params[:name])
         end

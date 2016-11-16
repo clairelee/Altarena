@@ -39,7 +39,6 @@ body {
         <%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
           <p class="top_border"><b>A Star Sub?</b></p>
           <p>
-            <b>A Star Sub?</b><br />
             <%= f.radio_button :star_sub, 'true' %> Yes<br />
             <%= f.radio_button :star_sub, 'false' %> No<br />
           </p>
