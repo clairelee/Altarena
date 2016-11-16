@@ -5,36 +5,42 @@
 <br>
 <br>
 <body>
-  <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
-  
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %> 
-    </p>
-    
-    <p>
-      <%= f.label :role %><br>
-      <div class="black-dropdown">
-        <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
-      </div>
-    </p>
-  
-    <p>
-      <%= f.label :production %><br>
-      <div class="black-dropdown">
-        <%= f.select :range, @unique_productions %> 
-      </div>
-    </p>
-    
-    <p>
-      <%= f.label :instrument %><br>
-      <%= f.text_field :instrument %> 
-    </p>
-  
-    <p>
-      <%= f.submit "Search"%>
-    </p>
-  
-  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">Search Notes</h1>
+        <p class="top_border">
+        
+        <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
+        
+          <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name %> 
+          </p>
+          
+          <p>
+            <%= f.label :role %><br>
+            <div class="black-dropdown">
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+            </div>
+          </p>
+        
+          <p>
+            <%= f.label :production %><br>
+            <div class="black-dropdown">
+              <%= f.select :range, @unique_productions %> 
+            </div>
+          </p>
+          
+          <p>
+            <%= f.label :instrument %><br>
+            <%= f.text_field :instrument %> 
+          </p>
+        
+          <p>
+            <%= f.submit "Search"%>
+          </p>
+        
+        <% end %>
 </body>
 </html>

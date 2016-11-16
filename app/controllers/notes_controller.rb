@@ -2,6 +2,7 @@ class NotesController < ApplicationController
     before_action :get_user
     def new
         @note = @user.notes.new
+        @unique_productions = Note.get_unique_column_values(:production)
     end
     
     def new_musician

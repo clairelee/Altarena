@@ -44,7 +44,9 @@
           
           <p>
             <%= f.label :production %><br>
-            <%= f.text_field :production %> 
+            <div class="black-dropdown">
+              <%= f.select :range, @unique_productions %> 
+            </div>
           </p>
           
           <p>
