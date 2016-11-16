@@ -27,7 +27,7 @@
               <td><%= link_to "+", new_note_path(:id => note.id) %></td>
               <td><%= note.name %></td>
               <td><%= note.role %></td>
-              <td><%= note.production %></td>
+              <td><%= note.production.name %></td>
             </tr>
           <% end %>
         </table>  

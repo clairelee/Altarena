@@ -43,9 +43,9 @@
           </p>
           
           <p>
-            <%= f.label :production %><br>
+            <%= f.label :production_id %><br>
             <div class="black-dropdown">
-              <%= f.select :production, @unique_productions %> 
+              <%= f.collection_select :production_id, @unique_productions, :id, :name %>
             </div>
           </p>
           

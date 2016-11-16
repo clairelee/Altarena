@@ -10,6 +10,15 @@
       <div class="col-lg-12">
         <h1 class="title">Search Notes</h1>
         <p class="top_border">
+          
+        <a href="/productions/new">Add Production</a>
+        
+        <br>
+        <br>
+        
+        <p id="notice"><%= notice %></p>
+        
+        <br>
         
         <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
         
@@ -26,9 +35,9 @@
           </p>
         
           <p>
-            <%= f.label :production %><br>
+            <%= f.label :production_id %><br>
             <div class="black-dropdown">
-              <%= f.select :production, @unique_productions %> 
+              <%= f.collection_select :production_id, @unique_productions, :id, :name %> 
             </div>
           </p>
           

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @production.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @production.company %>
+</p>
+
+<p>
+  <strong>Opening date:</strong>
+  <%= @production.opening_date %>
+</p>
+
+<%= link_to 'Edit', edit_production_path(@production) %> |
+<%= link_to 'Back', productions_path %>

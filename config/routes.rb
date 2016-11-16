@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  resources :productions
     get 'auth/:provider/callback', to: 'sessions#create'
     get 'auth/failure', to: redirect('/')
     get 'signout', to: 'sessions#destroy', as: 'signout'
@@ -14,12 +15,14 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create, :destroy]
     resources :home, only: [:show]
     resources :notes
+    resources :productions
     
     root to: "home#show"
 end
 
 
 # Rails.application.routes.draw do
+  
 #   get 'sessions/create'
 
 #   get 'sessions/destroy'

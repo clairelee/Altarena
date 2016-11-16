@@ -1,8 +1,6 @@
 class NotesController < ApplicationController
     before_action :get_user
     def new
-        #@note = @user.notes.new
-        #@note = @user.notes.find(params[:id])
         if params[:id]
             @note = @user.notes.find(params[:id])
             @note.rating = nil
@@ -10,7 +8,7 @@ class NotesController < ApplicationController
         else
             @note = @user.notes.new
         end
-        @unique_productions = Note.get_unique_column_values(:production)
+        @unique_productions = Production.all
     end
     
     def new_musician
@@ -89,7 +87,7 @@ class NotesController < ApplicationController
     end
     
     def home
-        @unique_productions = Note.get_unique_column_values(:production)
+        @unique_productions = Production.all
         
     end
     def search
@@ -98,22 +96,19 @@ class NotesController < ApplicationController
             @search_result = @search_result.where("name = ?", note_params[:name])
         end
         
-        if note_params[:production] != ""
-            @search_result = @search_result.where("production = ?", note_params[:production])
+        if note_params[:production_id] != ""
+            @search_result = @search_result.where("production_id = ?", note_params[:production_id])
         end
         
         if note_params[:role] != ""
             @search_result = @search_result.where("role = ?", note_params[:role])
         end
         
-        puts "HERE ARE THE RESULTS"
-        puts @search_result
-        
     end
     
     private
         def note_params
-            params.require(:note).permit(:name, :production, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer, :instrument)
+            params.require(:note).permit(:name, :production_id, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer, :instrument)
         end
         
         def note_fields
