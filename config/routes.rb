@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     get 'notes_new_actor', to: 'notes#new_actor'
     post 'notes_create_musician', to: 'notes#create_musician'
     post 'notes_create_actor', to: 'notes#create_actor'
-    
     get 'notes_home', to: 'notes#home'
     post 'notes_search', to: 'notes#search'
 

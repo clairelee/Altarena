@@ -70,10 +70,34 @@
             <br>
             <br>
             <div>
+                
+            <p id="notice"><%= notice %></p>
+    
               <% if current_user %>
-                <script type="text/javascript">
-                  window.location.href="/notes_home"  // put your correct path in a string here
-                </script>
+                Signed in as <strong><%= current_user.name %></strong>!
+                
+                <!--another if statement here if user is already connected to both-->
+                    <% if current_user.provider=='facebook' %>
+                        <button class="btn-linkedin btn-lg">
+                            <%= link_to 'Connect with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+                        </button>
+                    <% end %>
+                    <% if current_user.provider=='linkedin' %>
+                        <button class="btn-facebook btn-lg">
+                            <%= link_to "Connect with Facebook", "/auth/facebook", id: "sign_in" %>
+                        </button>
+                    <% end %>
+                <!--end if statement-->
+                
+                <div class="text-white">
+                  <%= link_to "Start searching!", notes_home_path%>
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                </div>
+
+                <!--<script type="text/javascript">-->
+                  <!--window.location.href="/notes_home"  // put your correct path in a string here-->
+                <!--</script>-->
+
               <% else %>
                 <button class="btn-facebook btn-lg">
                   <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
@@ -82,6 +106,12 @@
                   <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
                 </button>
               <% end %>
+<<<<<<<<< saved version
+
+=========
+              
+              
+>>>>>>>>> local version
             </div>
         </div>
         

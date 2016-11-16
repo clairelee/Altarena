@@ -1,7 +1,15 @@
 class NotesController < ApplicationController
     before_action :get_user
     def new
-        @note = @user.notes.new
+        #@note = @user.notes.new
+        #@note = @user.notes.find(params[:id])
+        if params[:id]
+            @note = @user.notes.find(params[:id])
+            @note.rating = nil
+            @note.attitude = nil
+        else
+            @note = @user.notes.new
+        end
         @unique_productions = Note.get_unique_column_values(:production)
     end
     
@@ -71,6 +79,7 @@ class NotesController < ApplicationController
         
         redirect_to note_path(@note)
     end
+    
     
     def destroy
         @note = @user.notes.find(params[:id])
