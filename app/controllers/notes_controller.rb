@@ -48,6 +48,7 @@ class NotesController < ApplicationController
                 redirect_to note_path(@note)
             end
         else
+            flash[:notice] = "Missing name or production."
             redirect_to new_note_path
         end
     end
@@ -76,9 +77,33 @@ class NotesController < ApplicationController
         redirect_to notes_path
     end
     
+    def home
+        @unique_productions = Note.get_unique_column_values(:production)
+        
+    end
+    
+    def search
+        @search_result = Note.all
+        if note_params[:name] != ""
+            @search_result = @search_result.where("name = ?", note_params[:name])
+        end
+        
+        if note_params[:production] != ""
+            @search_result = @search_result.where("production = ?", note_params[:production])
+        end
+        
+        if note_params[:role] != ""
+            @search_result = @search_result.where("role = ?", note_params[:role])
+        end
+        
+        puts "HERE ARE THE RESULTS"
+        puts @search_result
+        
+    end
+    
     private
         def note_params
-            params.require(:note).permit(:name, :production, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer)
+            params.require(:note).permit(:name, :production, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer, :instrument)
         end
         
         def note_fields
