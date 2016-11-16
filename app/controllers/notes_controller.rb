@@ -81,7 +81,6 @@ class NotesController < ApplicationController
         @unique_productions = Note.get_unique_column_values(:production)
         
     end
-    
     def search
         @search_result = Note.all
         if note_params[:name] != ""
