@@ -36,25 +36,14 @@ class ProductionsController < ApplicationController
   # PATCH/PUT /productions/1
   # PATCH/PUT /productions/1.json
   def update
-    respond_to do |format|
-      if @production.update(production_params)
-        format.html { redirect_to @production, notice: 'Production was successfully updated.' }
-        format.json { render :show, status: :ok, location: @production }
-      else
-        format.html { render :edit }
-        format.json { render json: @production.errors, status: :unprocessable_entity }
-      end
-    end
+    
   end
 
   # DELETE /productions/1
   # DELETE /productions/1.json
   def destroy
     @production.destroy
-    respond_to do |format|
-      format.html { redirect_to productions_url, notice: 'Production was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to productions_url, notice: 'Production was successfully destroyed.'
   end
 
   private

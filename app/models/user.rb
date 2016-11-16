@@ -11,4 +11,16 @@ class User < ActiveRecord::Base
     end
   end
   
+  def find_note(id)
+    self.notes.find(id)
+  end
+  
+  def all_notes
+    self.notes.all
+  end
+  
+  def new_note(note_params)
+    self.notes.new(note_params)
+  end
+  
 end

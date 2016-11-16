@@ -2,7 +2,7 @@ class NotesController < ApplicationController
     before_action :get_user
     def new
         if params[:id]
-            @note = @user.notes.find(params[:id])
+            @note = @user.find_note(params[:id])
             @note.rating = nil
             @note.attitude = nil
         else
@@ -13,31 +13,31 @@ class NotesController < ApplicationController
     
     def new_musician
         id = params[:id]
-        @note = @user.notes.find(id)
+        @note = @user.find_note(id)
     end
     
     def new_actor
         id = params[:id]
-        @note = @user.notes.find(id)
+        @note = @user.find_note(id)
     end
     
     def index
-        @notes = @user.notes.all
+        @notes = @user.all_notes
     end
     
     def show
-        @note = @user.notes.find(params[:id])
+        @note = @user.find_note(params[:id])
         @note_fields = note_fields
     end
     
     def edit
-        @note = @user.notes.find(params[:id])
+        @note = @user.find_note(params[:id])
         @note_fields = note_fields
         @unique_productions = Production.all
     end
     
     def update
-        @note = @user.notes.find(params[:id])
+        @note = @user.find_note(params[:id])
         if @note.update(note_params)
             flash[:notice] = "#{@note.name} was successfully updated."
             redirect_to note_path(@note)
@@ -47,7 +47,7 @@ class NotesController < ApplicationController
     end
     
     def create
-        @note = @user.notes.new(note_params)
+        @note = @user.new_note(note_params)
         if @note.save
             if @note.role == "Musician"
                 redirect_to notes_new_musician_path(:id => @note.id)
@@ -64,15 +64,16 @@ class NotesController < ApplicationController
     
     def create_musician
         id = params[:id]
-        @note = @user.notes.find(id)
+        @note = @user.find_note(id)
         @note.update(note_params)
+        @note.save
 
         redirect_to note_path(@note)
     end
     
     def create_actor
         id = params[:id]
-        @note = @user.notes.find(id)
+        @note = @user.find_note(id)
         @note.update(note_params)
         @note.save
         
@@ -81,7 +82,7 @@ class NotesController < ApplicationController
     
     
     def destroy
-        @note = @user.notes.find(params[:id])
+        @note = @user.find_note(params[:id])
         @note.destroy
         flash[:notice] = "Note was deleted."
         redirect_to notes_path
@@ -92,7 +93,7 @@ class NotesController < ApplicationController
         
     end
     def search
-        @search_result = @user.notes.all
+        @search_result = @user.all_notes
         if note_params[:name] != ""
             @search_result = @search_result.where("name = ?", note_params[:name])
         end
@@ -117,7 +118,7 @@ class NotesController < ApplicationController
         end
         
         def get_user
-            @user = User.find(session[:user_id])
+            @user = User.find_by_id(session[:user_id])
         end
         
         

@@ -19,141 +19,25 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe ProductionsController do
-
-  # This should return the minimal set of attributes required to create a valid
-  # Production. As you add validations to Production, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProductionsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
-
-  describe "GET index" do
-    it "assigns all productions as @productions" do
-      production = Production.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:productions).should eq([production])
-    end
+  before (:each) do
+    @production = double("New Production")
+    Production.stub(:new).and_return(@production)
   end
-
-  describe "GET show" do
-    it "assigns the requested production as @production" do
-      production = Production.create! valid_attributes
-      get :show, {:id => production.to_param}, valid_session
-      assigns(:production).should eq(production)
+  
+  describe 'creating a new production' do
+    it 'should redirect to the home page upon success' do
+      @production.stub(:save).and_return(true)
+      @production.stub(:name).and_return("Successful Production")
+      
+      post :create, :production => {:name => "Sucessful Production"}
+      response.should redirect_to notes_home_path
     end
-  end
-
-  describe "GET new" do
-    it "assigns a new production as @production" do
-      get :new, {}, valid_session
-      assigns(:production).should be_a_new(Production)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested production as @production" do
-      production = Production.create! valid_attributes
-      get :edit, {:id => production.to_param}, valid_session
-      assigns(:production).should eq(production)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Production" do
-        expect {
-          post :create, {:production => valid_attributes}, valid_session
-        }.to change(Production, :count).by(1)
-      end
-
-      it "assigns a newly created production as @production" do
-        post :create, {:production => valid_attributes}, valid_session
-        assigns(:production).should be_a(Production)
-        assigns(:production).should be_persisted
-      end
-
-      it "redirects to the created production" do
-        post :create, {:production => valid_attributes}, valid_session
-        response.should redirect_to(Production.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved production as @production" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Production.any_instance.stub(:save).and_return(false)
-        post :create, {:production => { "name" => "invalid value" }}, valid_session
-        assigns(:production).should be_a_new(Production)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Production.any_instance.stub(:save).and_return(false)
-        post :create, {:production => { "name" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested production" do
-        production = Production.create! valid_attributes
-        # Assuming there are no other productions in the database, this
-        # specifies that the Production created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Production.any_instance.should_receive(:update).with({ "name" => "MyString" })
-        put :update, {:id => production.to_param, :production => { "name" => "MyString" }}, valid_session
-      end
-
-      it "assigns the requested production as @production" do
-        production = Production.create! valid_attributes
-        put :update, {:id => production.to_param, :production => valid_attributes}, valid_session
-        assigns(:production).should eq(production)
-      end
-
-      it "redirects to the production" do
-        production = Production.create! valid_attributes
-        put :update, {:id => production.to_param, :production => valid_attributes}, valid_session
-        response.should redirect_to(production)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the production as @production" do
-        production = Production.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Production.any_instance.stub(:save).and_return(false)
-        put :update, {:id => production.to_param, :production => { "name" => "invalid value" }}, valid_session
-        assigns(:production).should eq(production)
-      end
-
-      it "re-renders the 'edit' template" do
-        production = Production.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Production.any_instance.stub(:save).and_return(false)
-        put :update, {:id => production.to_param, :production => { "name" => "invalid value" }}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested production" do
-      production = Production.create! valid_attributes
-      expect {
-        delete :destroy, {:id => production.to_param}, valid_session
-      }.to change(Production, :count).by(-1)
-    end
-
-    it "redirects to the productions list" do
-      production = Production.create! valid_attributes
-      delete :destroy, {:id => production.to_param}, valid_session
-      response.should redirect_to(productions_url)
+    
+    it 'should redirect to create new production page upon failure' do
+      @production.stub(:save).and_return(false)
+      
+      post :create, :production => {:name => "Failed Production"}
+      response.should render_template(:new)
     end
   end
 
