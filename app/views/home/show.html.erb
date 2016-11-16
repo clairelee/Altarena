@@ -71,12 +71,9 @@
             <br>
             <div>
               <% if current_user %>
-                Signed in as <strong><%= current_user.name %></strong>!
-                <div class="text-white">
-                  <%= link_to "Create note", new_note_path%>
-                  <%= link_to "My notes", notes_path %>
-                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
-                </div>
+                <script type="text/javascript">
+                  window.location.href="/notes_home"  // put your correct path in a string here
+                </script>
               <% else %>
                 <button class="btn-facebook btn-lg">
                   <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>

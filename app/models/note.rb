@@ -4,4 +4,8 @@ class Note < ActiveRecord::Base
     def find_by_name(name)
         
     end
+    
+    def self.get_unique_column_values(column)
+        Note.uniq.pluck(column)
+    end
 end
