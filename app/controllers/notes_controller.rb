@@ -48,6 +48,7 @@ class NotesController < ApplicationController
                 redirect_to note_path(@note)
             end
         else
+            flash[:notice] = "Missing name or production."
             redirect_to new_note_path
         end
     end
