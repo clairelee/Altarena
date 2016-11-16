@@ -37,7 +37,7 @@
           <p>
             <%= f.label :production_id %><br>
             <div class="black-dropdown">
-              <%= f.collection_select :production_id, @unique_productions, :id, :name %> 
+              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => ''} %> 
             </div>
           </p>
           

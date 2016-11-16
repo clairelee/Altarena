@@ -44,9 +44,11 @@ body {
           </p>
          
          <p>
-            <%= f.label :production %><br>
-            <%= f.text_field :production %>
-          </p>
+            <%= f.label :production_id %><br>
+            <div class="black-dropdown">
+              <%= f.collection_select :production_id, @unique_productions, :id, :name %>
+            </div>
+         </p>
           
          <p>
             <%= f.label :role %><br>

@@ -33,6 +33,7 @@ class NotesController < ApplicationController
     def edit
         @note = @user.notes.find(params[:id])
         @note_fields = note_fields
+        @unique_productions = Production.all
     end
     
     def update
