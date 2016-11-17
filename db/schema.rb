@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< 923622c57fe384c9626d24946eae9607eea98da7
 ActiveRecord::Schema.define(version: 20161116051903) do
-=======
-ActiveRecord::Schema.define(version: 20161116034556) do
->>>>>>> scaffolding Profile table and routes
 
   create_table "notes", force: :cascade do |t|
     t.string   "name"
