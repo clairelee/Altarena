@@ -11,10 +11,7 @@
         <h1 class="title">Search Notes</h1>
         <p class="top_border">
           
-        <a href="/productions/new">Add Production</a>
-        
-        <br>
-        <br>
+        <%= button_to "Add Production", new_production_path, :method => "get" %>
         
         <p id="notice"><%= notice %></p>
         
