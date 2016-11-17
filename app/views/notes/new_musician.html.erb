@@ -20,7 +20,7 @@
 <style>
 body {
   /*background-color: #DCDCDC !important;*/
-    background-color: #2C3E50 !important;
+    background-color: #e0e0e0!important;
 
 }
 </style>
@@ -40,7 +40,10 @@ body {
         <h1 class="title">New Note: Musician</h1>
 
         <%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
-          <p class="top_border"><b>A Star Sub?</b></p>
+          <p class="top_border">
+            <br>
+            <b>A Star Sub?</b>
+          </p>
           <p>
             <%= f.radio_button :star_sub, 'true' %> Yes<br />
             <%= f.radio_button :star_sub, 'false' %> No<br />
@@ -67,6 +70,28 @@ body {
           <br>
           <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>
         <% end %>
+        <br>  
+        <div class="sign_out_position">
+          <% if current_user %>
+          Signed in as <strong><%= current_user.name %></strong>!
+              <div>
+                
+                <div class="hidden-xs hidden-sm hidden-md hidden-lg">
+                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                  <%= link_to "My notes", notes_path %>
+                  <%= link_to "Create note", new_note_path %>
+                </div>
+                
+              </div>
+              <% else %>
+                <button class="btn-facebook btn-lg">
+                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                </button>
+                <button class="btn-linkedin btn-lg">
+                  <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
+                </button>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>

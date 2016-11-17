@@ -3,58 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .top_border {
-    color: white !important;
+    color: #2c3e50 !important;
     border-top: 1px solid white;
     padding-top: 5px;
 }
 label {
-    color: white !important;
+    color: #2C3E50!important;
 }
 p {
-    color: white !important;
+    color: #2C3E50 !important;
 }
 fieldset {
-    color: white !important;
+    color: #2C3E50 !important;
 }
 .title {
-    color: white !important;
+    color: #2C3E50 !important;
     font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
 }
 
 #back-btn-new {
-    color: white !important;
+    color: #2C3E50 !important;
     position: relative;
     top: 50px;
     right: 45px;
 }
 
 #back-btn-show {
-    color: white !important;
+    color: #2C3E50 !important;
     position: relative;
     top: 20px;
     text-align: left;
 }
 #back-btn-edit {
-    color: white !important;
+    color: #2C3E50 !important;
     position: relative;
     top: 40px;
     text-align: left;
 }
 #back-btn-actor {
-    color: white !important;
+    color: #2C3E50 !important;
     position: relative;
     top: -2px;
     text-align: left;
 }
 .sign_out_position {
-    color: white  !important;
+    color: #2C3E50  !important;
     position: relative;
     text-align: right;
     top: 20px;
 }
 
 .sign_out_position_index {
-    color: white  !important;
+    color: #2C3E50 !important;
     position: relative;
     text-align: right;
     top: 40px;
@@ -80,13 +80,17 @@ input {
 }
 
 tbody {
-    color: white;
+    color: #2C3E50;
 }
 
 .black-description {
     color: black;
 }
 
-.black-dropdown {
+.black-role {
     color: black;
+}
+
+.white-back-btn {
+    color: #2C3E50 !important;
 }

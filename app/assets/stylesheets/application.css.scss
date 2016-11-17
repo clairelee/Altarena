@@ -18,39 +18,43 @@
 @import "bootstrap";
 
 #mainNav {
-    background: white;
+    background: #2C3E50;
     font-weight: 700;
     border: none;
 }
 
 .navbar-brand {
-    color: #18BC9C !important;
+    color: white !important;
 }
 
 .navbar-right {
-    color: #18BC9C !important;
+    color: white !important;
 }
 
 .footer-above {
-    background-color: #18BC9C !important;
+    background-color: white !important;
+}
+
+.footer-below {
+    background-color: #2C3E50 !important;
 }
 
 .navbar-green {
-    color: #18BC9C !important;
+    color: white !important;
 }
 
 .footer-title {
-    color: white !important;
+    color: #2C3E50 !important;
 }
 
 h3 {
-    color: white !important;
+    color: #2C3E50 !important;
 }
 
 .btn-social {
-    color: white !important;
+    color: #2C3E50 !important;
 }
 
 a {
-    color: white !important;
+    color: #2C3E50 !important;
 }

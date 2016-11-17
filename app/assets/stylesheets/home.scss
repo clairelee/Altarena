@@ -5,6 +5,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.color-signed-in {
+  color: #2C3E50 !important;
+}
+
+header {
+  background: #e0e0e0 !important;
+}
+
+hr.star-light:after {
+  background-color: #e0e0e0 !important;
+  color: #2C3E50 !important;
+}
+hr.star-light {
+  border-color: #2C3E50 !important;  
+}
+img {
+  color: #2C3E50 !important;
+}
+.intro-text {
+  color: #2C3E50 !important;
+}
 .text-white {
   color:white !important;
 }
