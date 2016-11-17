@@ -4,9 +4,9 @@
 
 
 == Directable (Altarena Playhouse & Custom Made Theater Co.)
-Group 12: Baiyu Chen, Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
+Group 12: Karan Das, John Ho, Gunsoo Kim, Claire Lee, Calley Wang
 
-* Heroku App (no splash page yet): https://directable.herokuapp.com
+* Heroku App: https://directable.herokuapp.com
 
 * Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1885999
 
