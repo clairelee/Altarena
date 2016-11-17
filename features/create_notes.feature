@@ -4,10 +4,8 @@ Feature: Create Notes
   I want to create notes about them
   
   Background:
-    Given I am on the Notes page
-    And the following notes exist:
-    |name    |role |
-    |John Ho |Actor|
+    Given I am on the home page
+    And I follow "Sign in with Facebook"
     
   Scenario: Add an actor note
     When I go to the Create notes page
