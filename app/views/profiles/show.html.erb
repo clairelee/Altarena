@@ -10,12 +10,16 @@
 </p>
 
 <p>
-  <strong>Photo url:</strong>
-  <%= @profile.photo_url %>
+  <%= image_tag(@profile.photo_url, size: "150x150")%>
 </p>
 
 <p>
   <strong>Resume url:</strong>
+  <%= @profile.resume_url %>
+</p>
+
+<p>
+  <strong>Notes about this person:</strong>
   <%= @profile.resume_url %>
 </p>
 
