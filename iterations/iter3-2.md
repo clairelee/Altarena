@@ -1,6 +1,6 @@
 # User stories completed
 * As a director, I want to create a “production”, so I can associate artists and notes with the “production” .
-* As a director, I want to be able to create a "profile" for an an artist, so I can associate notes with artists. (pending)
+* As a director, I want to be able to create a "profile" for an an artist, so I can associate notes with artists. (ON SEPARATE BRANCH)
 * As a director, I want to create notes for an artist, so I can archive details about the artist. (updated)
 * As a director, I want to be able to view my OWN notes for an artist, so I can retrieve details about the artist.
 * As a director, I want to be able to search my notes, so I can see details about a specific query. 
