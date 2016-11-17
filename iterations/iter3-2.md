@@ -1,5 +1,4 @@
 # User stories completed
-* As a user I want to be able to login with LinkedIn and Facebook so that I can use the app under one identity. (pending)
 * As a director, I want to create a “production”, so I can associate artists and notes with the “production” .
 * As a director, I want to be able to create a "profile" for an an artist, so I can associate notes with artists. (pending)
 * As a director, I want to create UNIQUE notes for an actor/actress, so I can archive details about the actor/actress. 
@@ -10,3 +9,6 @@
 * UI Improvements (pending)
 * Input sanitization and consistency
 * Fixed delete bug
+
+# Next iteration
+* As a user I want to be able to connect my LinkedIn and Facebook accounts so that I can use the app under one identity.
