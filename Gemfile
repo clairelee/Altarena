@@ -12,7 +12,7 @@ group :production do
 end
 
 gem 'omniauth-linkedin' 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '~> 1.5.1'
 
 gem 'bootstrap-sass'
 
