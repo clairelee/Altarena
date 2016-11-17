@@ -1,25 +1,26 @@
 <p id="notice"><%= notice %></p>
-<<<<<<< HEAD
-<br>
-<br>
-<br>
-<br>
-<br>
-=======
 
->>>>>>> 23ffaaeeac5abd98bd2db2411f4ffe77d570a498
+<br>
+<br>
+<br>
+<br>
+<br>
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
 </p>
 
 <p>
-  <strong>Photo url:</strong>
-  <%= @profile.photo_url %>
+  <%= image_tag(@profile.photo_url, size: "150x150")%>
 </p>
 
 <p>
   <strong>Resume url:</strong>
+  <%= @profile.resume_url %>
+</p>
+
+<p>
+  <strong>Notes about this person:</strong>
   <%= @profile.resume_url %>
 </p>
 
