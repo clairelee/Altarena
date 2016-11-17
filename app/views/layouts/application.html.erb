@@ -21,7 +21,7 @@
     <style>
       body {
       /*background-color: #DCDCDC !important;*/
-        background-color: #2C3E50 !important;
+        background-color: #9a9a9a !important;
       }
     </style>
 
@@ -77,23 +77,23 @@
     <!--    </div>-->
     <!--</header>-->
   
-<div>
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-        <div class="text-white">
-          <%= link_to "Sign out", signout_path, id: "sign_out" %>
-          <%= link_to "Create notes", new_note_path %>
-          <%= link_to "My notes", notes_path %>
-        </div>
-  <% else %>
-    <button class="btn-facebook btn-lg">
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    </button>
-    <button class="btn-linkedin btn-lg">
-        <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
-    </button>
-  <% end %>
-</div>
+<!--<div>-->
+<!--  <% if current_user %>-->
+<!--    Signed in as <strong><%= current_user.name %></strong>!-->
+<!--        <div class="text-white">-->
+<!--          <%= link_to "Sign out", signout_path, id: "sign_out" %>-->
+<!--          <%= link_to "Create notes", new_note_path %>-->
+<!--          <%= link_to "My notes", notes_path %>-->
+<!--        </div>-->
+<!--  <% else %>-->
+<!--    <button class="btn-facebook btn-lg">-->
+<!--        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>-->
+<!--    </button>-->
+<!--    <button class="btn-linkedin btn-lg">-->
+<!--        <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>-->
+<!--    </button>-->
+<!--  <% end %>-->
+<!--</div>-->
 
 <%= yield %>
 
