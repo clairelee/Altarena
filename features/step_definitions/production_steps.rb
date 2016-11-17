@@ -1,3 +1,3 @@
 Given /^the production "(.*)" already exists$/ do |title|
-    pending
+    Production.create(:name => title)
 end

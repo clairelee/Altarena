@@ -31,8 +31,10 @@ module NavigationHelpers
     when /^the edit notes page for "([^"]+)"$/
       note = Note.find_by_name($1)
       edit_note_path(note.id)
-    when /^the Production page$/
-      pending
+    when /^the Notes Home page$/
+      '/notes_home'
+    when /^the Create productions page$/
+      '/productions/new'
     when /^the Create Profile page$/
       pending
     when /^the User Record page$/

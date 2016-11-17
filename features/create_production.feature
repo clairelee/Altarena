@@ -5,16 +5,18 @@ Feature: Create Production
   I want to create a Production
   
   Background:
-    Given I am on the production page
+    Given I am on the Notes Home page
+    When I press "Add Production"
+    Then I should be on the Create productions page
     
   Scenario: Add new production
-    When I fill in name with "Lion King"
-    And I fill in date with "12-21-2015"
-    And I fill in director with "Armando Fox"
-    Then I should see "Success"
+    When I fill in "Name" with "Lion King"
+    And I fill in "Company" with "Disney"
+    And I press "Create"
+    Then I should be on the Notes Home page
   
   Scenario: Create existing production
     Given the production "Lion King" already exists
-    When I fill in "title" with "Old"
+    When I fill in "Name" with "Lion King"
     And I press "Create"
-    Then I should see "This Production Already Exists!"
+    Then I should be on the Create productions page

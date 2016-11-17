@@ -29,7 +29,8 @@ class ProductionsController < ApplicationController
     if @production.save
         redirect_to notes_home_path, notice: "#{@production.name} was successfully created."
     else
-        render :new 
+        flash[:notice] = "#{@production.name} already exists!"
+        redirect_to new_production_path
     end
   end
 

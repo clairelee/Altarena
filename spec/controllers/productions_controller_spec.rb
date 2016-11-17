@@ -35,9 +35,10 @@ describe ProductionsController do
     
     it 'should redirect to create new production page upon failure' do
       @production.stub(:save).and_return(false)
+      @production.stub(:name).and_return("Failed Production")
       
       post :create, :production => {:name => "Failed Production"}
-      response.should render_template(:new)
+      response.should redirect_to new_production_path
     end
   end
 
