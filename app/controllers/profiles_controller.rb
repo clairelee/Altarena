@@ -25,15 +25,12 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
+    
+    if @profile.save
+        redirect_to notes_home_path, notice: "Profile for #{@profile.name} was successfully created."
+    else
+        flash[:notice] = "Profile for #{@profile.name} already exists!"
+        redirect_to new_profile_path
     end
   end
 
