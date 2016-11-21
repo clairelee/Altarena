@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     resources :notes
     resources :productions
     resources :profiles, only: [:show]
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 4da05c84d2bcc868f9c99b07ff57657a086d4983
     root to: "home#show"
 end

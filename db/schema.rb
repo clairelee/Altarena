@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 20161116051903) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "profiles", force: :cascade do |t|
+    t.text     "name"
+    t.text     "photo_url"
+    t.text     "resume_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+>>>>>>> 4da05c84d2bcc868f9c99b07ff57657a086d4983
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
