@@ -37,35 +37,45 @@ body {
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="title">New Note: Musician</h1>
+        <h1 class="title bottom_border">New Note: Musician</h1>
 
         <%= form_for @note, :url => notes_create_musician_path(:id => @note.id), :html => { :method => :post }  do |f| %>
-          <p class="top_border">
-            <br>
-            <b>A Star Sub?</b>
-          </p>
-          <p>
-            <%= f.radio_button :star_sub, 'true' %> Yes<br />
-            <%= f.radio_button :star_sub, 'false' %> No<br />
-          </p>
+          <div class="centered">
+            <p>
+              <br>
+              <b>A Star Sub?</b>
+            </p>
+            <p>
+              <%= f.radio_button :star_sub, 'true' %> Yes<br />
+              <br>
+              <%= f.radio_button :star_sub, 'false' %> No<br />
+              <br>
+            </p>
+            
+            <p>
+              <b>Musical Maturity & Experience</b><br />
+              <br>
+              <%= f.radio_button :musical_maturity, '4' %> Pro/Veteran<br />
+              <br>
+              <%= f.radio_button :musical_maturity, '3' %> Solid<br />
+              <br>
+              <%= f.radio_button :musical_maturity, '2' %> A few weaknesses but fine<br />
+              <br>
+              <%= f.radio_button :musical_maturity, '1' %> Green<br />
+              <br>
+            </p>
+            
+            <p>
+              <%= f.label :description %><br>
+              <div class="black-description">
+                <%= f.text_area :description %>
+              </div>
+            </p>
+          </div>
+          
           
           <p>
-            <b>Musical Maturity & Experience</b><br />
-            <%= f.radio_button :musical_maturity, '4' %> Pro/Veteran<br />
-            <%= f.radio_button :musical_maturity, '3' %> Solid<br />
-            <%= f.radio_button :musical_maturity, '2' %> A few weaknesses but fine<br />
-            <%= f.radio_button :musical_maturity, '1' %> Green<br />
-          </p>
-          
-          <p>
-            <%= f.label :description %><br>
-            <div class="black-description">
-              <%= f.text_area :description %>
-            </div>
-          </p>
-          
-          <p>
-            <%= f.submit "Create Note"%>
+            <%= f.submit "Create Note", :id => "buttons-centered"%>
           </p>
           <br>
           <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>

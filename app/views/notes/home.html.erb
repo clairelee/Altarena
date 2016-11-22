@@ -37,41 +37,44 @@ body {
         <h1 class="title">Search Notes</h1>
         <p class="top_border">
           <br>
-          
-        <%= button_to "Add Production", new_production_path, :method => "get" %>
+          <%= button_to "Add Production", new_production_path, :method => "get", :id => "buttons" %>
         </p>
         <p id="notice"><%= notice %></p>
         
         <br>
         
         <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
-        
+        <div class="centered">
           <p>
             <%= f.label :name %><br>
-            <%= f.text_field :name %> 
+            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here'%> 
           </p>
-          
+          <br>
           <p>
             <%= f.label :role %><br>
-            <div class="black-dropdown">
-              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+            <div class="dropdown">
+              <div class="dropdown-select">
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'} %>
+              </div>
             </div>
           </p>
-        
+          <br>
           <p>
             <%= f.label :production_id %><br>
             <div class="black-dropdown">
-              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => ''} %> 
+              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'} %> 
             </div>
           </p>
-          
+          <br>
           <p>
             <%= f.label :instrument %><br>
-            <%= f.text_field :instrument %> 
+            <%= f.text_field :instrument, :id => "text-field", :placeholder => 'Enter Instrument Here'%> 
           </p>
+        </div>
+          <br>
         
           <p>
-            <%= f.submit "Search"%>
+            <%= f.submit "Search", :id => "buttons-centered"%>
           </p>
           <br>
         <% end %>

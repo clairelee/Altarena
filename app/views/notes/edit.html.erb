@@ -37,111 +37,114 @@ body {
         <br>
         <br>
         
-        <h1 class="title">Edit Note</h1>
+        <h1 class="title bottom_border">Edit Note</h1>
   
         <%= form_for :note, url: note_path(@note), method: :patch do |f| %>
-          <p class="top_border">
+          <div class="centered">
+            <p>
+              <br>
+              <%= f.label :name %><br>
+              <%= f.text_field :name, :id => "text-field", :placeholder => 'Modify Name Here'%>
+            </p>
+           <br>
+           <p>
+              <%= f.label :production_id %><br>
+              <div class="black-dropdown">
+                <%= f.collection_select :production_id, @unique_productions, :id, :name %>
+              </div>
+           </p>
+           <br>  
+           <p>
+              <%= f.label :role %><br>
+              <div class="black-role">
+                <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+              </div>
+            </p>
+           <br>
+            <p><b>Overall, Would you recommend/work with this person again?</b></p>
+            <fieldset id="rating">
+              <%= radio_button_tag("note[rating]", "5", (@note.rating == 5)) %> Yes!!<br>
+              <%= radio_button_tag("note[rating]", "4", (@note.rating == 4)) %> Yes<br>
+              <%= radio_button_tag("note[rating]", "3", (@note.rating == 3)) %> I won't cast them, but I won't object<br>
+              <%= radio_button_tag("note[rating]", "2", (@note.rating == 2)) %> Rather not<br>
+              <%= radio_button_tag("note[rating]", "1", (@note.rating == 1)) %> Definitely not<br>
+              <!--<%= f.radio_button :rating, '5' %> Yes!!<br/>-->
+              <!--<%= f.radio_button :rating, '4' %> Yes<br/>-->
+              <!--<%= f.radio_button :rating, '3' %> I won't cast them, but I won't object<br/>-->
+              <!--<%= f.radio_button :rating, '2' %> Rather not<br/>-->
+              <!--<%= f.radio_button :rating, '1' %> Definitely not<br/>-->
+            </fieldset>  
+           <br>  
+            <p><b>How is this person's attitude?</b></p>
+            <fieldset id="attitude">
+              <%= radio_button_tag("note[attitude]", "4", (@note.attitude == 4)) %> Brings joy to every rehearsal<br>
+              <%= radio_button_tag("note[attitude]", "3", (@note.attitude == 3)) %> Professional and easy to work with<br>
+              <%= radio_button_tag("note[attitude]", "2", (@note.attitude == 2)) %> Sometimes needs managing<br>
+              <%= radio_button_tag("note[attitude]", "1", (@note.attitude == 1)) %> Difficult<br>
+              <!--<%= f.radio_button :attitude, '4' %> Brings joy to every rehearsal<br/>-->
+              <!--<%= f.radio_button :attitude, '3' %> Professional and easy to work with<br/>-->
+              <!--<%= f.radio_button :attitude, '2' %> Sometimes needs managing<br/>-->
+              <!--<%= f.radio_button :attitude, '1' %> Difficult<br/>-->
+            </fieldset>
+           <br>
+            <% if @note.role == "Musician" %>
+              <p><b>A Star Sub?</b></p>
+              <fieldset id="star_sub">
+                <%= radio_button_tag("note[star_sub]", "true", (@note.star_sub == true)) %> Yes<br>
+                <%= radio_button_tag("note[star_sub]", "false", (@note.star_sub == false)) %> No<br>
+                <!--<%= f.radio_button :star_sub, 'true' %> Yes<br/>-->
+                <!--<%= f.radio_button :star_sub, 'false' %> No<br/>-->
+              </fieldset>
             <br>
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
-          </p>
-         
-         <p>
-            <%= f.label :production_id %><br>
-            <div class="black-dropdown">
-              <%= f.collection_select :production_id, @unique_productions, :id, :name %>
-            </div>
-         </p>
-          
-         <p>
-            <%= f.label :role %><br>
-            <div class="black-role">
-              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
-            </div>
-          </p>
-          
-          <p><b>Overall, Would you recommend/work with this person again?</b></p>
-          <fieldset id="rating">
-            <%= radio_button_tag("note[rating]", "5", (@note.rating == 5)) %> Yes!!<br>
-            <%= radio_button_tag("note[rating]", "4", (@note.rating == 4)) %> Yes<br>
-            <%= radio_button_tag("note[rating]", "3", (@note.rating == 3)) %> I won't cast them, but I won't object<br>
-            <%= radio_button_tag("note[rating]", "2", (@note.rating == 2)) %> Rather not<br>
-            <%= radio_button_tag("note[rating]", "1", (@note.rating == 1)) %> Definitely not<br>
-            <!--<%= f.radio_button :rating, '5' %> Yes!!<br/>-->
-            <!--<%= f.radio_button :rating, '4' %> Yes<br/>-->
-            <!--<%= f.radio_button :rating, '3' %> I won't cast them, but I won't object<br/>-->
-            <!--<%= f.radio_button :rating, '2' %> Rather not<br/>-->
-            <!--<%= f.radio_button :rating, '1' %> Definitely not<br/>-->
-          </fieldset>  
-          
-          <p><b>How is this person's attitude?</b></p>
-          <fieldset id="attitude">
-            <%= radio_button_tag("note[attitude]", "4", (@note.attitude == 4)) %> Brings joy to every rehearsal<br>
-            <%= radio_button_tag("note[attitude]", "3", (@note.attitude == 3)) %> Professional and easy to work with<br>
-            <%= radio_button_tag("note[attitude]", "2", (@note.attitude == 2)) %> Sometimes needs managing<br>
-            <%= radio_button_tag("note[attitude]", "1", (@note.attitude == 1)) %> Difficult<br>
-            <!--<%= f.radio_button :attitude, '4' %> Brings joy to every rehearsal<br/>-->
-            <!--<%= f.radio_button :attitude, '3' %> Professional and easy to work with<br/>-->
-            <!--<%= f.radio_button :attitude, '2' %> Sometimes needs managing<br/>-->
-            <!--<%= f.radio_button :attitude, '1' %> Difficult<br/>-->
-          </fieldset>
-          
-          <% if @note.role == "Musician" %>
-            <p><b>A Star Sub?</b></p>
-            <fieldset id="star_sub">
-              <%= radio_button_tag("note[star_sub]", "true", (@note.star_sub == true)) %> Yes<br>
-              <%= radio_button_tag("note[star_sub]", "false", (@note.star_sub == false)) %> No<br>
-              <!--<%= f.radio_button :star_sub, 'true' %> Yes<br/>-->
-              <!--<%= f.radio_button :star_sub, 'false' %> No<br/>-->
-            </fieldset>
-          
-            <p><b>Musical Maturity & Experience</b></p>
-            <fieldset id="musical_maturity">
-              <%= radio_button_tag("note[musical_maturity]", "4", (@note.musical_maturity == 4)) %> Pro/Veteran<br>
-              <%= radio_button_tag("note[musical_maturity]", "3", (@note.musical_maturity == 3)) %> Solid<br>
-              <%= radio_button_tag("note[musical_maturity]", "2", (@note.musical_maturity == 2)) %> A few weaknesses but fine<br>
-              <%= radio_button_tag("note[musical_maturity]", "1", (@note.musical_maturity == 1)) %> Green<br>
-              <!--<%= f.radio_button :musical_maturity, '4' %> Pro/Veteran<br/>-->
-              <!--<%= f.radio_button :musical_maturity, '3' %> Solid<br/>-->
-              <!--<%= f.radio_button :musical_maturity, '2' %> A few weaknesses but fine<br/>-->
-              <!--<%= f.radio_button :musical_maturity, '1' %> Green<br/>-->
-            </fieldset>
-          <% end %>
-          
-          <% if @note.role == "Actor/Actress" %>
-            <p><b>Reads music?</b></p>
-            <fieldset id="reads_music">
-              <%= radio_button_tag("note[reads_music]", "3", (@note.reads_music == 3)) %> Very well<br>
-              <%= radio_button_tag("note[reads_music]", "2", (@note.reads_music == 2)) %> Can work on their own, but not sightread<br>
-              <%= radio_button_tag("note[reads_music]", "1", (@note.reads_music == 1)) %> No<br>
-              <!--<%= f.radio_button :reads_music, '3' %> Very well<br/>-->
-              <!--<%= f.radio_button :reads_music, '2' %> Can work on their own, but not sightread<br/>-->
-              <!--<%= f.radio_button :reads_music, '1' %> No<br/>-->
-            </fieldset>
+              <p><b>Musical Maturity & Experience</b></p>
+              <fieldset id="musical_maturity">
+                <%= radio_button_tag("note[musical_maturity]", "4", (@note.musical_maturity == 4)) %> Pro/Veteran<br>
+                <%= radio_button_tag("note[musical_maturity]", "3", (@note.musical_maturity == 3)) %> Solid<br>
+                <%= radio_button_tag("note[musical_maturity]", "2", (@note.musical_maturity == 2)) %> A few weaknesses but fine<br>
+                <%= radio_button_tag("note[musical_maturity]", "1", (@note.musical_maturity == 1)) %> Green<br>
+                <!--<%= f.radio_button :musical_maturity, '4' %> Pro/Veteran<br/>-->
+                <!--<%= f.radio_button :musical_maturity, '3' %> Solid<br/>-->
+                <!--<%= f.radio_button :musical_maturity, '2' %> A few weaknesses but fine<br/>-->
+                <!--<%= f.radio_button :musical_maturity, '1' %> Green<br/>-->
+              </fieldset>
+            <% end %>
             
-            <p><b>Harmony singer?</b></p>
-            <fieldset id="harmony_singer">
-              <%= radio_button_tag("note[harmony_singer]", "4", (@note.harmony_singer == 4)) %> Pro/Veteran<br>
-              <%= radio_button_tag("note[harmony_singer]", "3", (@note.harmony_singer == 3)) %> Solidly teachable<br>
-              <%= radio_button_tag("note[harmony_singer]", "2", (@note.harmony_singer == 2)) %> Teachable but weak<br>
-              <%= radio_button_tag("note[harmony_singer]", "1", (@note.harmony_singer == 1)) %> No<br>
-              <!--<%= f.radio_button :harmony_singer, '4' %> Pro/Veteran<br/>-->
-              <!--<%= f.radio_button :harmony_singer, '3' %> Solidly teachable<br/>-->
-              <!--<%= f.radio_button :harmony_singer, '2' %> Teachable but weak<br/>-->
-              <!--<%= f.radio_button :harmony_singer, '1' %> No<br/>-->
-            </fieldset>
-          <% end %>
+            <% if @note.role == "Actor/Actress" %>
+              <p><b>Reads music?</b></p>
+              <fieldset id="reads_music">
+                <%= radio_button_tag("note[reads_music]", "3", (@note.reads_music == 3)) %> Very well<br>
+                <%= radio_button_tag("note[reads_music]", "2", (@note.reads_music == 2)) %> Can work on their own, but not sightread<br>
+                <%= radio_button_tag("note[reads_music]", "1", (@note.reads_music == 1)) %> No<br>
+                <!--<%= f.radio_button :reads_music, '3' %> Very well<br/>-->
+                <!--<%= f.radio_button :reads_music, '2' %> Can work on their own, but not sightread<br/>-->
+                <!--<%= f.radio_button :reads_music, '1' %> No<br/>-->
+              </fieldset>
+              <br>
+              <p><b>Harmony singer?</b></p>
+              <fieldset id="harmony_singer">
+                <%= radio_button_tag("note[harmony_singer]", "4", (@note.harmony_singer == 4)) %> Pro/Veteran<br>
+                <%= radio_button_tag("note[harmony_singer]", "3", (@note.harmony_singer == 3)) %> Solidly teachable<br>
+                <%= radio_button_tag("note[harmony_singer]", "2", (@note.harmony_singer == 2)) %> Teachable but weak<br>
+                <%= radio_button_tag("note[harmony_singer]", "1", (@note.harmony_singer == 1)) %> No<br>
+                <!--<%= f.radio_button :harmony_singer, '4' %> Pro/Veteran<br/>-->
+                <!--<%= f.radio_button :harmony_singer, '3' %> Solidly teachable<br/>-->
+                <!--<%= f.radio_button :harmony_singer, '2' %> Teachable but weak<br/>-->
+                <!--<%= f.radio_button :harmony_singer, '1' %> No<br/>-->
+              </fieldset>
+            <% end %>
+            <br>
+            <p>
+              <%= f.label :description %><br>
+              <div class="black-description">
+                <%= f.text_area :description %>
+              </div>
+            </p>
+            
+            <p>
+              <%= f.submit "Update", :id => "buttons-centered"%>
+            </p>
+          </div>
           
-          <p>
-            <%= f.label :description %><br>
-            <div class="black-description">
-              <%= f.text_area :description %>
-            </div>
-          </p>
-          
-          <p>
-            <%= f.submit "Update"%>
-          </p>
          
         <%= link_to 'Back', notes_path, id: "back-btn-edit" %>
         <% end %>

@@ -41,44 +41,59 @@
           
           <p class="top_border">
             <br>
-            <%= f.label :name %><br>
-            <%= f.text_field :name %>
           </p>
           
+        <div class="centered">
+          <p>
+            <%= f.label :name %><br>
+            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here' %>
+          </p>
+
+          <br>          
           <p>
             <%= f.label :production_id %><br>
             <div class="black-dropdown">
-              <%= f.collection_select :production_id, @unique_productions, :id, :name %>
+              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'} %>
             </div>
           </p>
-          
+          <br>
           <p>
             <%= f.label :role %><br>
             <div class="black-dropdown">
-              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'} %>
             </div>
           </p>
-          
+          <br>
           <p>
             <b>Overall, Would you recommend/work with this person again?</b><br />
+            <br>
             <%= f.radio_button :rating, '5' %> Yes!!<br />
+            <br>
             <%= f.radio_button :rating, '4' %> Yes<br />
+            <br>
             <%= f.radio_button :rating, '3' %> I won't cast them, but I won't object<br />
+            <br>
             <%= f.radio_button :rating, '2' %> Rather not<br />
+            <br>
             <%= f.radio_button :rating, '1' %> Definitely not<br />
           </p>
-          
+          <br>
           <p>
             <b>How is this person's attitude?</b><br />
+            <br>
             <%= f.radio_button :attitude, '4' %> Brings joy to every rehearsal<br />
+            <br>
             <%= f.radio_button :attitude, '3' %> Professional and easy to work with<br />
+            <br>
             <%= f.radio_button :attitude, '2' %> Sometimes needs managing<br />
+            <br>
             <%= f.radio_button :attitude, '1' %> Difficult<br />
           </p>
-         
+         <br>
           <p>
-            <%= f.submit "Next"%>
+            <%= f.submit "Next", :id => "buttons-centered"%>
           </p>
+        </div>
            
           <%= link_to 'Back', root_path %>
           <% end %>
