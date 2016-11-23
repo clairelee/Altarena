@@ -32,7 +32,8 @@
 }
 
 .footer-above {
-    background-color: #edf6ff !important;
+    // background-color: #edf6ff !important;
+    background-color: #2C3E50;
 }
 
 .footer-below {
@@ -44,7 +45,7 @@
 }
 
 .footer-title {
-    color: #2C3E50 !important;
+    color: #ffffff !important;
 }
 
 h3 {
@@ -56,5 +57,32 @@ h3 {
 }
 
 a {
-    color: #ffffff !important;
+    color: #ffffff
+}
+
+
+table {
+    width: 80%;
+    padding: 10px;
+}
+
+th {
+    font-size: 18px;
+    height: 50px;
+    background-color: #2C3E50;
+    color: white;
+}
+
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+.table a, .table a:hover {
+    color: #2C3E50;   
+}
+
+#table a {
+    color: #000000;
 }

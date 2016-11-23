@@ -11,7 +11,7 @@
 
         <%= form_for :note, url: notes_path do |f| %>
         
-          <p id="notice"><%= notice %></p>
+          <p id="notice"><font color="red"><%= notice %></font></p>
           
           <p class="top_border">
             <br>
@@ -65,7 +65,7 @@
           </p>
          <br>
           <p>
-            <%= f.submit "Next", :id => "buttons-centered"%>
+            <%= f.submit "Next", :id => "buttons"%>
           </p>
         <!--</div>-->
            

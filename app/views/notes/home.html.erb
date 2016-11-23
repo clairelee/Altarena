@@ -1,11 +1,12 @@
 <br><br><br><br><br>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
 
       <h1>Search Notes</h1>
       
-      <p id="notice"><%= notice %></p>
+      <p id="notice"><font color="red"><%= notice %></p></font>
         
         <br>
 
@@ -13,33 +14,35 @@
         <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
 
           <p>
-            <%= f.label :name %>
+            <%= f.label :name, :class => "wide-text"%>
             <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here'%> 
           </p>
           <br>
           <p>
-            <%= f.label :role %>
-              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'} %>
+            <%= f.label :role, :class => "wide-text" %>
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'}, :style => "width: 250px" %>
           </p>
           <br>
           <p>
-            <%= f.label :production_id %>
-              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'} %> 
+            <%= f.label :production_id, :class => "wide-text" %>
+              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'}, :style => "width: 250px" %> 
           </p>
           <br>
           <p>
-            <%= f.label :instrument %>
+            <%= f.label :instrument, :class => "wide-text" %>
             <%= f.text_field :instrument, :id => "text-field", :placeholder => 'Enter Instrument Here'%> 
           </p>
-        </div>
+        
           <br>
         
           <p>
-            <%= f.submit "Search", :id => "buttons-centered"%>
+            <%= f.submit "Search", :id => "buttons"%>
           </p>
+          </div>
           <br>
         <% end %>
       
       
     </div>
   </div>
+

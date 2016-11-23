@@ -1,9 +1,4 @@
-  <style>
-  body {
-  /*background-color: #DCDCDC !important;*/
-    background-color: #e0e0e0 !important;
-  }
-</style>
+
   <br><br><br><br><br>
   <div class="container">
     <div class="row">
@@ -13,9 +8,10 @@
         <p class="top_border">
         </p>
         <br>
-        <table class="index-table">
+
+        <table border="1">
           <tr>
-            <th>Add New Note</th>
+            <th>+</th>
             <th>Name</th>
             <th>Role</th>
             <th>Production</th>
@@ -23,13 +19,14 @@
          
           <% @search_result.each do |note| %>
             <tr>
-              <td><%= link_to "+", new_note_path(:id => note.id) %></td>
-              <td><%= link_to note.name, profile_path(1) %></td>
+              <td><%= link_to "+", new_note_path(:id => note.id), :style=> "color: #2C3E50" %></td>
+              <td><%= link_to note.name, profile_path(1), :style=> "color: #2C3E50k" %></td>
               <td><%= note.role %></td>
               <td><%= note.production.name %></td>
             </tr>
           <% end %>
         </table>
+
         <br>  
        
       </div>
