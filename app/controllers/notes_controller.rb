@@ -9,6 +9,7 @@ class NotesController < ApplicationController
             @note = @user.notes.new
         end
         @unique_productions = Production.all
+        @instruments = Instrument.all
     end
     
     def new_musician
@@ -101,7 +102,7 @@ class NotesController < ApplicationController
     
     def home
         @unique_productions = Production.all
-        
+        @instruments = Instrument.all
     end
     def search
         flash[:search_result_notice] = ""
