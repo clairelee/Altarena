@@ -11,8 +11,8 @@
 
         <%= form_for :note, url: notes_path do |f| %>
         
-          <p id="notice"><font color="red"><%= notice %></font></p>
-          
+          <p id="notice"><font color="red"><%= flash[:create_notice] %></font></p>
+
           <p class="top_border">
             <br>
           </p>
@@ -38,6 +38,13 @@
             </div>
           </p>
           <br>
+          <p>
+            <%= f.label :instruments %><br>
+            <input type="checkbox" name="instruments[]" value="1">Violin<br>
+            <input type="checkbox" name="instruments[]" value="2">Percussion<br>
+            <input type="checkbox" name="instruments[]" value="3">Guitar<br>
+          </p>
+          
           <p>
             <b>Overall, Would you recommend/work with this person again?</b><br />
             <br>
