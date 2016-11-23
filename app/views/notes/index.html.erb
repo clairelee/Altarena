@@ -47,7 +47,7 @@ body {
          
           <% @notes.each do |note| %>
             <tr>
-              <td><%= link_to note.name, profile_path(1) %></td>
+              <td><%= link_to note.name, profile_path(note.profile_id) %></td>
               <td><%= note.role %></td>
               <td><%= link_to 'Show', note_path(note) %></td>
               <td><%= link_to 'Edit', edit_note_path(note) %></td>

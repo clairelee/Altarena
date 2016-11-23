@@ -39,7 +39,7 @@ body {
         <p class="top_border">
           <br>
           <strong>Name:</strong>
-          <%= @note.name %>
+          <%= link_to @note.name, profile_path(@note.profile_id) %>
         </p>
         
         <p>

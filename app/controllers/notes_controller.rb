@@ -47,8 +47,19 @@ class NotesController < ApplicationController
     end
     
     def create
+        # Create a new profile if a profile matching the name doesn't exist yet
         @note = @user.new_note(note_params)
         if @note.save
+            matching_profile = Profile.find_by name: @note.name
+            if matching_profile
+                @note.profile_id = matching_profile.id
+            else
+                @profile = Profile.create(:name => @note.name)
+                @profile.save
+                @note.profile_id = @profile.id
+            end
+            @note.save
+                
             if @note.role == "Musician"
                 redirect_to notes_new_musician_path(:id => @note.id)
             elsif @note.role == "Actor/Actress"

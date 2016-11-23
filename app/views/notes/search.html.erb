@@ -51,7 +51,7 @@ body {
           <% @search_result.each do |note| %>
             <tr>
               <td><%= link_to "+", new_note_path(:id => note.id) %></td>
-              <td><%= link_to note.name, profile_path(1) %></td>
+              <td><%= link_to note.name, profile_path(note.profile_id) %></td>
               <td><%= note.role %></td>
               <td><%= note.production.name %></td>
             </tr>
