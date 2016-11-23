@@ -40,20 +40,25 @@ body {
         <p class="top_border">
         </p>
         <br>
+        
+        <p id="notice"><%= flash[:search_result_notice] %></p>
+        
         <table class="index-table">
           <tr>
-            <th> </th>
+            <th>  </th>
             <th>Name</th>
             <th>Role</th>
             <th>Production</th>
+            <th>Instruments</th>
           </tr>
          
           <% @search_result.each do |note| %>
             <tr>
-              <td><%= link_to "+", new_note_path(:id => note.id) %></td>
+              <td><%= link_to "+ ", new_note_path(:id => note.id) %></td>
               <td><%= link_to note.name, profile_path(1) %></td>
               <td><%= note.role %></td>
               <td><%= note.production.name %></td>
+              <td><%= note.get_instruments %></td>
             </tr>
           <% end %>
         </table>

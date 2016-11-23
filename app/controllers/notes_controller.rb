@@ -28,6 +28,8 @@ class NotesController < ApplicationController
     def show
         @note = @user.find_note(params[:id])
         @note_fields = note_fields
+        
+        @instruments = @note.get_instruments
     end
     
     def edit
@@ -39,7 +41,7 @@ class NotesController < ApplicationController
     def update
         @note = @user.find_note(params[:id])
         if @note.update(note_params)
-            flash[:notice] = "#{@note.name} was successfully updated."
+            flash[:update_notice] = "#{@note.name} was successfully updated."
             redirect_to note_path(@note)
         else
             render 'edit'
@@ -48,7 +50,16 @@ class NotesController < ApplicationController
     
     def create
         @note = @user.new_note(note_params)
+    
         if @note.save
+            
+            instrument_ids = params[:instruments]
+            if instrument_ids
+                for id in instrument_ids do
+                    @note.notes_instruments.create(:instrument_id => id)
+                end
+            end
+        
             if @note.role == "Musician"
                 redirect_to notes_new_musician_path(:id => @note.id)
             elsif @note.role == "Actor/Actress"
@@ -57,7 +68,7 @@ class NotesController < ApplicationController
                 redirect_to note_path(@note)
             end
         else
-            flash[:notice] = "Missing name or production."
+            flash[:create_notice] = "Missing name or production."
             redirect_to new_note_path
         end
     end
@@ -84,7 +95,7 @@ class NotesController < ApplicationController
     def destroy
         @note = @user.find_note(params[:id])
         @note.destroy
-        flash[:notice] = "Note was deleted."
+        flash[:delete_notice] = "Note was deleted."
         redirect_to notes_path
     end
     
@@ -93,24 +104,49 @@ class NotesController < ApplicationController
         
     end
     def search
-        @search_result = @user.all_notes
+        flash[:search_result_notice] = ""
+        filtered_notes = @user.all_notes
         if note_params[:name] != ""
-            @search_result = @search_result.where("name = ?", note_params[:name])
-        end
-        
-        if note_params[:production_id] != ""
-            @search_result = @search_result.where("production_id = ?", note_params[:production_id])
+            filtered_notes = filtered_notes.where("lower(name) like ?", "%#{note_params[:name]}%")
+            flash[:search_result_notice] += "Name: #{note_params[:name]}, "
         end
         
         if note_params[:role] != ""
-            @search_result = @search_result.where("role = ?", note_params[:role])
+            filtered_notes = filtered_notes.where("role = ?", note_params[:role])
+            flash[:search_result_notice] += "Role: #{note_params[:role]}, "
         end
         
+        if note_params[:production_id] != ""
+            filtered_notes = filtered_notes.where("production_id = ?", note_params[:production_id])
+            flash[:search_result_notice] += "Production: #{Production.find_by_id(note_params[:production_id]).name}, "
+        end
+        
+        if params[:instruments]
+            @search_result = [] 
+            for note in filtered_notes do
+                instrument_ids = note.get_instrument_ids
+                plays_all_instruments = (params[:instruments] - instrument_ids).empty?
+                
+                if plays_all_instruments
+                    @search_result << note
+                end
+            end
+            
+            instruments = Instrument.get_instruments_by_ids(params[:instruments])
+            flash[:search_result_notice] += "Instruments: #{instruments}, "
+        else 
+            @search_result = filtered_notes
+        end
+        
+        if flash[:search_result_notice] != ""
+            flash[:search_result_notice] = "Notes with " + flash[:search_result_notice]
+            flash[:search_result_notice] = flash[:search_result_notice][0..-3]
+        end
     end
     
     private
         def note_params
-            params.require(:note).permit(:name, :production_id, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer, :instrument)
+            params.require(:note).permit(:name, :production_id, :role, :description, :rating, :attitude, :star_sub, :musical_maturity, :reads_music, :harmony_singer)
         end
         
         def note_fields

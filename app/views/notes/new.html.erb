@@ -37,7 +37,7 @@
 
         <%= form_for :note, url: notes_path do |f| %>
         
-          <p id="notice"><%= notice %></p>
+          <p id="notice"><%= flash[:create_notice] %></p>
           
           <p class="top_border">
             <br>
@@ -57,6 +57,13 @@
             <div class="black-dropdown">
               <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']] %>
             </div>
+          </p>
+          
+          <p>
+            <%= f.label :instruments %><br>
+            <input type="checkbox" name="instruments[]" value="1">Violin<br>
+            <input type="checkbox" name="instruments[]" value="2">Percussion<br>
+            <input type="checkbox" name="instruments[]" value="3">Guitar<br>
           </p>
           
           <p>
