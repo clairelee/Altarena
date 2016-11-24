@@ -19,13 +19,13 @@
           </p>
           <br>
           <p>
-            <%= f.label :role, :class => "wide-text" %>
-              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'}, :style => "width: 250px" %>
+            <%= f.label :production_id, :class => "wide-text" %>
+              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'}, :style => "width: 250px" %> 
           </p>
           <br>
           <p>
-            <%= f.label :production_id, :class => "wide-text" %>
-              <%= f.collection_select :production_id, @unique_productions, :id, :name, {:include_blank => 'Choose A Production'}, :style => "width: 250px" %> 
+            <%= f.label :role, :class => "wide-text" %>
+              <%= f.select :role, [['Musician','Musician'],['Actor/Actress','Actor/Actress']], {:include_blank => 'Choose A Role'}, :style => "width: 250px" %>
           </p>
           <br>
           <p>

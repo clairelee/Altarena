@@ -15,8 +15,8 @@
           <tr>
             <th>+</th>
             <th>Name</th>
-            <th>Role</th>
             <th>Production</th>
+            <th>Role</th>
             <th>Instruments</th>
           </tr>
          
@@ -24,8 +24,8 @@
             <tr>
               <td><%= link_to "+", new_note_path(:id => note.id), :style=> "color: #2C3E50" %></td>
               <td><%= link_to note.name, profile_path(1), :style=> "color: #2C3E50k" %></td>
-              <td><%= note.role %></td>
               <td><%= note.production.name %></td>
+              <td><%= note.role %></td>
               <td><%= note.get_instruments %></td>
             </tr>
           <% end %>
