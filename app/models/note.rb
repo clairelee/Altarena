@@ -3,6 +3,7 @@ class Note < ActiveRecord::Base
     validates :production_id, presence: true
     belongs_to :user
     belongs_to :production
+    belongs_to :profile
     def find_by_name(name)
     end
     

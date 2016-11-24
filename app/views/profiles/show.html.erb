@@ -23,6 +23,16 @@
 
 <p>
   <strong>Notes about this person:</strong>
+  <tbody>
+    <% @profile.notes.each do |note| %>
+      <br>
+      <tr>
+        <th><%= link_to note_path(note.id) %></th>
+        <td><%= note.production.name %></td>
+        <td><%= note.role %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </p>
 
 

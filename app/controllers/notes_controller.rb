@@ -53,12 +53,16 @@ class NotesController < ApplicationController
             matching_profile = Profile.find_by name: @note.name
             if matching_profile
                 @note.profile_id = matching_profile.id
+                @note.save
+                matching_profile.notes << @note
+                matching_profile.save
             else
                 @profile = Profile.create(:name => @note.name)
-                @profile.save
                 @note.profile_id = @profile.id
+                @note.save
+                @profile.notes << @note
+                @profile.save
             end
-            @note.save
                 
             if @note.role == "Musician"
                 redirect_to notes_new_musician_path(:id => @note.id)
