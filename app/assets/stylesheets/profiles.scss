@@ -1,3 +1,220 @@
-// Place all the styles related to the Profiles controller here.
+// Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+select {
+    background-color: transparent;
+    border-color: white;
+    border-width: medium;
+    font-size: 16px !important;
+}
+
+
+.dropdown {
+    color: #2C3E50;
+    border: none;
+}
+.centered {
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.wide-text {
+    width: 140px;
+    // border-style: solid;
+    // border-width: 1px;
+    // background: #1c2b36;
+    padding: 5px;
+    // color: #ffffff;
+}
+
+#text-field {
+    background: none;
+    color: #1c2b36!important;
+    // border: none;
+    // border-bottom: 1px dashed #3a3f51;
+    font-size: 16px;
+    height: 26px;
+    // padding: 0;
+    padding: 15px;
+    // position: relative;
+    // top: -4px;
+    // padding-top: 25px;
+    // padding-bottom: 15px;
+}
+
+#buttons {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: white;
+    border-width: medium;
+    font-size: large;
+    color: #2C3E50 !important;
+}
+
+#buttons-centered {
+    //display: inline-block;
+    padding: 12px 24px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin: auto;
+    display: block;
+    border-color: white;
+    border-width: medium;
+    font-size: large;
+    color: #2C3E50;
+}
+
+.top_border {
+    color: #2c3e50 !important;
+    border-top: 1px solid white;
+    padding-top: 5px;
+}
+
+.bottom_border {
+    color: #2c3e50 !important;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;    
+}
+label {
+    color: #2C3E50!important;
+}
+p {
+    color: #2C3E50 !important;
+}
+fieldset {
+    color: #2C3E50 !important;
+}
+.title {
+    color: #2C3E50 !important;
+    font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif !important;
+}
+
+#back-btn-new {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 50px;
+    right: 45px;
+}
+
+#back-btn-show {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 20px;
+    text-align: left;
+}
+#back-btn-edit {
+    color: #2C3E50 !important;
+    position: relative;
+    top: 40px;
+    text-align: left;
+}
+#back-btn-actor {
+    color: #2C3E50 !important;
+    position: relative;
+    top: -2px;
+    text-align: left;
+}
+.sign_out_position {
+    color: #2C3E50  !important;
+    position: relative;
+    text-align: right;
+    top: 20px;
+}
+
+.sign_out_position_index {
+    color: #2C3E50 !important;
+    position: relative;
+    text-align: right;
+    top: 40px;
+}
+// .next {
+//     text-align: center;
+// }
+
+.index-table {
+    width: 315px !important;
+}
+
+.options-color {
+    color: #18BC9C !important;
+}
+
+
+input {
+    color: black !important;
+}
+
+tbody {
+    color: #2C3E50;
+}
+
+.black-description {
+    color: black;
+}
+
+.black-role {
+    color: black;
+}
+
+.white-back-btn {
+    color: #2C3E50 !important;
+}
+
+textarea {
+    margin: 0px;
+    height: 114px;
+    width: 100%;
+    background-color: #eeeeee;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: white;
+    border-width: medium;
+    color: #2C3E50 !important;
+}
+
+.view-note-padding {
+    padding-bottom: 5px;
+}
+
+th {
+    font-size: 18px;
+}

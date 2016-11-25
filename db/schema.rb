@@ -12,7 +12,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20161123222749) do
-
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+  end
   create_table "notes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -30,6 +32,11 @@ ActiveRecord::Schema.define(version: 20161123222749) do
     t.integer  "production_id"
     t.integer  "profile_id"
     t.integer  "note_id"
+  end
+
+  create_table "notes_instruments", force: :cascade do |t|
+    t.integer "note_id"
+    t.integer "instrument_id"
   end
 
   create_table "productions", force: :cascade do |t|

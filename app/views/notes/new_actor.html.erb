@@ -36,24 +36,34 @@ body {
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="title">New Note: Actor/Actress</h1>
-
+        <h1 class="title bottom_border">New Note: Actor/Actress</h1>
+        <br>
+        
         <%= form_for @note, :url => notes_create_actor_path(:id => @note.id), :html => { :method => :post }  do |f| %>
+          <div class="centered">
             <p>
               <b>Reads music?</b><br />
+              <br>
               <%= f.radio_button :reads_music, '3' %> Very well<br />
+              <br>
               <%= f.radio_button :reads_music, '2' %> Can work on their own, but not sightread<br />
+              <br>
               <%= f.radio_button :reads_music, '1' %> No<br />
             </p>
+            <br>
             
             <p>
               <b>Harmony singer?</b><br />
+              <br>
               <%= f.radio_button :harmony_singer, '4' %> Pro/Veteran<br />
+              <br>
               <%= f.radio_button :harmony_singer, '3' %> Solidly teachable<br />
+              <br>
               <%= f.radio_button :harmony_singer, '2' %> Teachable but weak<br />
+              <br>
               <%= f.radio_button :harmony_singer, '1' %> No<br />
             </p>
-            
+            <br>
             <p>
               <%= f.label :description %><br>
               <div class="black-description">
@@ -61,9 +71,11 @@ body {
               </div>
               
             </p>
+          </div>
+            
             
             <p>
-              <%= f.submit "Create Note"%>
+              <%= f.submit "Create Note", :id => "buttons-centered"%>
             </p>
             <br>
             <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>

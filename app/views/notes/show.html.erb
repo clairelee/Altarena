@@ -35,61 +35,69 @@ body {
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h1 class="title">Note</h1>
-        <p class="top_border">
-          <br>
+        <h1 class="title bottom_border">Note</h1>
+        <div class="centered">
+          <p class="view-note-padding">
+            <br>
           <strong>Name:</strong>
           <%= link_to @note.name, profile_path(@note.profile_id) %>
         </p>
-        
-        <p>
-          <strong>Production:</strong>
-          <%= @note.production.name %>
-        </p>
-         
-        <p>
-          <strong>Role:</strong>
-          <%= @note.role %>
-        </p>
-        
-        <p>
-          <strong>Rating:</strong>
-          <%= @note.rating %>
-        </p>
-        
-        <p>
-          <strong>Attitude:</strong>
-          <%= @note_fields["attitude"][@note.attitude] %>
-        </p>
-        
-        <% if @note.role == "Musician" %>
-          <p>
-            <strong>Star Sub:</strong>
-            <%= @note_fields["star_sub"][@note.star_sub] %>
+          
+          <p class="view-note-padding">
+            <strong>Production:</strong>
+            <%= @note.production.name %>
+          </p>
+           
+          <p class="view-note-padding">
+            <strong>Role:</strong>
+            <%= @note.role %>
           </p>
           
-          <p>
-            <strong>Musical Maturity:</strong>
-            <%= @note_fields["musical_maturity"][@note.musical_maturity] %>
-          </p>
-        <% end %>
-        
-        <% if @note.role == "Actor/Actress" %>
-          <p>
-            <strong>Reads Music:</strong>
-            <%= @note_fields["reads_music"][@note.reads_music] %>
+          <p class="view-note-padding">
+            <strong>Instruments:</strong>
+            <%= @note.get_instruments %>
           </p>
           
-          <p>
-            <strong>Harmony Singer:</strong>
-            <%= @note_fields["harmony_singer"][@note.harmony_singer] %>
+          <p class="view-note-padding">
+            <strong>Rating:</strong>
+            <%= @note.rating %>
           </p>
-        <% end %>
+          
+          <p class="view-note-padding">
+            <strong>Attitude:</strong>
+            <%= @note_fields["attitude"][@note.attitude] %>
+          </p>
+          
+          <% if @note.role == "Musician" %>
+            <p class="view-note-padding">
+              <strong>Star Sub:</strong>
+              <%= @note_fields["star_sub"][@note.star_sub] %>
+            </p>
+            
+            <p class="view-note-padding">
+              <strong>Musical Maturity:</strong>
+              <%= @note_fields["musical_maturity"][@note.musical_maturity] %>
+            </p>
+          <% end %>
+          
+          <% if @note.role == "Actor/Actress" %>
+            <p class="view-note-padding">
+              <strong>Reads Music:</strong>
+              <%= @note_fields["reads_music"][@note.reads_music] %>
+            </p>
+            
+            <p class="view-note-padding">
+              <strong>Harmony Singer:</strong>
+              <%= @note_fields["harmony_singer"][@note.harmony_singer] %>
+            </p>
+          <% end %>
+          
+          <p>
+            <strong>Description:</strong>
+            <%= @note.description %>
+          </p>
+        </div>
         
-        <p>
-          <strong>Description:</strong>
-          <%= @note.description %>
-        </p>
         
         <%= link_to 'Back', notes_path, id: "back-btn-show" %>
         
