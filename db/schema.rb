@@ -12,9 +12,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20161123222749) do
+
   create_table "instruments", force: :cascade do |t|
     t.string "name"
   end
+
   create_table "notes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
