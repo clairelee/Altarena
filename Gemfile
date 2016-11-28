@@ -11,6 +11,11 @@ group :production do
   gem 'pg'
 end
 
+
+# Use for autocomplete
+gem "jquery-ui-rails"
+gem 'rails4-autocomplete'
+
 gem 'omniauth-linkedin' 
 gem 'omniauth-facebook', '~> 1.5.1'
 
