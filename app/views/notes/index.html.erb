@@ -19,8 +19,6 @@
         <div class="centered">
           <!--<table class="index-table">-->
           <table border="1">
-
-           
             <% @notes.each do |note| %>
               <tr>
                 <td><%= link_to note.name, profile_path(note.profile_id) %></td>
