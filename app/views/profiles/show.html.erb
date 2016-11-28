@@ -20,12 +20,13 @@
 <p>
   <strong>Notes about this person:</strong>
   <tbody>
+    <table border="1">
     <% @profile.notes.each do |note| %>
       <br>
       <tr>
-        <th><%= link_to note_path(note.id) %></th>
-        <td><%= note.production.name %></td>
+        <th><b><%= link_to note.production.name, note_path(note.id) %></b></th>
         <td><%= note.role %></td>
+        <td><%= note.description %></td>
       </tr>
     <% end %>
   </tbody>
