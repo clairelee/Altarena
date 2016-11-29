@@ -12,10 +12,10 @@
 
         
         <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
-
+          
           <p>
             <%= f.label :name, :class => "wide-text"%>
-            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here', data: { autocomplete: autocomplete_profile_name_notes_path } %> 
+            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here', data: { autocomplete: autocomplete_profile_name_notes_path }, :class => "ui-autocomplete" %> 
           </p>
           <br>
           <p>
