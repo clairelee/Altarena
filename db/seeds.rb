@@ -16,7 +16,7 @@ production = Production.create(:name => "Lion King", :company => "Disney", :open
 User.all.each do |user|
     
     defaultNotes = [{:name => 'Ronald', :production_id => 1, :role => 'Musician',
-                    :description => 'sight reading', :rating => 9, :attitude => 4, 
+                    :description => 'sight reading', :rating => 5, :attitude => 4, 
                     :star_sub => true, :musical_maturity => 3, :reads_music => 3, :harmony_singer => 3,
                     :profile => profile}]
     
