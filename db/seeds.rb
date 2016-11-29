@@ -23,8 +23,7 @@ User.all.each do |user|
     defaultNotes.each do |note|
       note = user.new_note(note)
       note.save
-      ni = note.notes_instruments.new(:note => note, :instrument => instruments.sample)
-      ni.save
+      new_notes_instrument = NotesInstrument.create(:note_id => note.id, :instrument_id => 1)
     end
     user.save
 end    
