@@ -12,11 +12,14 @@ Rails.application.routes.draw do
     get 'notes_home', to: 'notes#home'
     post 'notes_search', to: 'notes#search'
 
+
     resources :sessions, only: [:create, :destroy]
     resources :home, only: [:show]
-    resources :notes
-    resources :productions
-    resources :profiles, only: [:show]
+    resources :notes do
+      get :autocomplete_note_name, :on => :collection
+    end
+    resources :productions 
+    resources :profiles 
     
     root to: "home#show"
 end
