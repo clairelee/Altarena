@@ -8,22 +8,22 @@
 
 instruments = Instrument.create([{ name: 'Violin' }, { name: 'Percussion'}, { name: 'Guitar' }, {name: 'Piano/Keyboards'}, {name: 'Harp'}, {name: 'Viola'}, {name: 'Cello'}, {name: 'Acoustic Bass'}, {name: 'Fender Bass'}, {name: 'Electric Guitar'}, {name: 'Flamenco Guitar'}, {name: 'Banjo'}, {name: 'Soprano Sax'}, {name: 'Alto Sax'}, {name: 'Tenor Sax'}, {name: 'Baritone Sax'}, {name: 'Bass Sax'}, {name: 'Oboe'}, {name: 'English Horn'}, {name: 'Bassoon'}, {name: 'Clarinet'}, {name: 'Alto Clarinet'}, {name: 'Bass Clarinet'}, {name: 'Flute'}, {name: 'Piccolo'}, {name: 'Alto Flute'}, {name: 'Bass Flute'}, {name: 'Harmonica'}, {name: 'Accordion'}, {name: 'Trumpet/Flugelhorn'}, {name: 'Horn'}, {name: 'Trombone'}, {name: 'Bass Trombone'}, {name: 'Tuba'}])
 
-profile = Profile.create(:name => "Ronald")
+profile = Profile.create(:name => "Eric")
     profile.save
-production = Production.create(:name => "Lion King", :company => "Disney", :opening_date => "June 1st, 1995")
+production = Production.create(:name => "Beauty & The Beast", :company => "Disney", :opening_date => "June 23rd, 1995")
     production.save
 
 User.all.each do |user|
     
-    defaultNotes = [{:name => 'Ronald', :production_id => 1, :role => 'Musician',
-                    :description => 'sight reading', :rating => 5, :attitude => 4, 
-                    :star_sub => true, :musical_maturity => 3, :reads_music => 3, :harmony_singer => 3,
+    defaultNotes = [{:name => 'Eric', :production_id => 3, :role => 'Actor/Actress',
+                    :description => 'not the best singer, but can act', :rating => 4, :attitude => 2, 
+                    :star_sub => false, :musical_maturity => 1, :reads_music => 1, :harmony_singer => 1,
                     :profile => profile}]
     
     defaultNotes.each do |note|
       note = user.new_note(note)
       note.save!
-      new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "1")
+      new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "3")
     end
     user.save
 end    
