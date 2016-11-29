@@ -15,7 +15,7 @@
 
           <p>
             <%= f.label :name, :class => "wide-text"%>
-            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here'%> 
+            <%= f.text_field :name, :id => "text-field", :placeholder => 'Enter Name Here', data: { autocomplete: autocomplete_profile_name_notes_path } %> 
           </p>
           <br>
           <p>

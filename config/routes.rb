@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create, :destroy]
     resources :home, only: [:show]
     resources :notes do
-      get :autocomplete_note_name, :on => :collection
+      get :autocomplete_profile_name, :on => :collection
     end
     resources :productions 
     resources :profiles 
