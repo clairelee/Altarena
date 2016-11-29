@@ -15,14 +15,14 @@ production = Production.create(:name => "Lion King", :company => "Disney", :open
 
 User.all.each do |user|
     
-    defaultNotes = [{:name => 'Ronald', :production => production, :role => 'Musician',
+    defaultNotes = [{:name => 'Ronald', :production_id => 1, :role => 'Musician',
                     :description => 'sight reading', :rating => 9, :attitude => 4, 
                     :star_sub => true, :musical_maturity => 3, :reads_music => 3, :harmony_singer => 3,
                     :profile => profile}]
     
     defaultNotes.each do |note|
       note = user.new_note(note)
-      note.save
+      note.save!
       new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "1")
     end
     user.save
