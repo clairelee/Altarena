@@ -4,20 +4,20 @@
 <br>
 <br>
 <br>
-<p>
+<p class="text-center">
   <strong>Name:</strong>
   <%= @profile.name %>
 </p>
-
-<p>
+<br>
+<p class="text-center">
   <%= image_tag(@profile.photo_url, size: "150x150")%>
 </p>
-
-<p>
+<br>
+<p class="text-center">
   <a href=<%= @profile.resume_url %>>Resume</a>
 </p>
-
-<p>
+<br>
+<p class="text-center">
   <strong>Notes about this person:</strong>
   <tbody>
     <% @profile.notes.each do |note| %>
