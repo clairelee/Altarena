@@ -24,13 +24,18 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-    
-    if @profile.save
-        redirect_to notes_home_path, notice: "Profile for #{@profile.name} was successfully created."
-    else
-        flash[:notice] = "Profile for #{@profile.name} already exists!"
+    @existing = Profile.find_by name: profile_params[:name]
+    if @existing
+      flash[:profile_error_notice] = "Profile for #{@existing.name} already exists!"
         redirect_to new_profile_path
+    else
+      @profile = Profile.new(profile_params)
+      if @profile.save
+          redirect_to notes_home_path, notice: "Profile for #{@profile.name} was successfully created."
+      else
+          flash[:profile_error_notice] = "Error creating profile for #{@profile.name}."
+          redirect_to new_profile_path
+      end
     end
   end
 
