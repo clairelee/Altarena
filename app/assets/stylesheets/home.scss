@@ -38,12 +38,17 @@ a {
 
 #sign_in {
     color:white !important;
+    text-decoration: none;
 }
 
 #sign_in_linkedin {
     color:white !important;
+    text-decoration: none;
 }
 
+.search-btn {
+  text-align: center;
+}
 $bs-height-base: ($line-height-computed + $padding-base-vertical * 2) !default;
 $bs-height-lg:   (floor($font-size-large * $line-height-base) + $padding-large-vertical * 2) !default;
 $bs-height-sm:   (floor($font-size-small * 1.5) + $padding-small-vertical * 2) !default;
