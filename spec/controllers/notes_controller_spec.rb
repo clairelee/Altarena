@@ -18,23 +18,36 @@ describe NotesController do
             get :new, :id => 1
         end
         it 'should successfully add a new note for fields on first page and redirect to page with musician specific fields' do
-            @note.stub(:save).and_return(true)
-            expect(@user).to receive(:new_note)
-            allow(@note).to receive(:role) {"Musician"}
-            allow(@note).to receive(:id) {1}
-            expect(@note).to receive(:save)
+            @production = Production.create(:name => "Dummy Production")
+            @production.save
+            @note = Note.create({:name => "Double Note", :production_id => 1})
+            @note.save
+            @user = double("User")
+            @user.stub(:find_note).and_return(@note)
+            @user.stub(:new_note).and_return(@note)
+            User.stub(:find_by_id).and_return(@user)
+            
+            @note.role = "Musician"
+            @note.id = 1
+            @note.save
             
             post :create, :note => {:name => "Dummy Name", :production => "Dummy Production", :role => "Musician", :rating => 5}
             response.should redirect_to notes_new_musician_path(:id => 1)
         end
         
         it 'should successfully add a new note for fields on first page and redirect to page with actor specific fields' do
-            @note.stub(:save).and_return(true)
-            expect(@user).to receive(:new_note)
-            allow(@note).to receive(:role) {"Actor/Actress"}
-            allow(@note).to receive(:id) {2}
-            expect(@note).to receive(:save)
-            Note.stub(:save).and_return(true)
+            @production = Production.create(:name => "Dummy Production")
+            @production.save
+            @note = Note.create(:name => "Double Note", :production_id => 1)
+            @note.save
+            @user = double("User")
+            @user.stub(:find_note).and_return(@note)
+            @user.stub(:new_note).and_return(@note)
+            User.stub(:find_by_id).and_return(@user)
+            
+            @note.role = "Actor/Actress"
+            @note.id = 2
+            @note.save
             
             post :create, :note => {:name => "Dummy Name", :production => "Dummy Production", :role => "Actor", :rating => 5}
             response.should redirect_to notes_new_actor_path(:id => 2)
@@ -99,11 +112,15 @@ describe NotesController do
     
     describe 'searching through all notes' do
         it 'should filter through notes using each of the categories specified' do
+            mock_production = double("Mock Production")
+            mock_production.stub(:name).and_return("Mock Production")
             @search_result = double("Search Result")
             @user.stub(:all_notes).and_return(@search_result)
             @search_result.stub(:where).and_return(@search_result)
             
-            expect(@search_result).to receive(:where).with("name = ?", "dummy_name")
+            Production.stub(:find_by_id).and_return(mock_production)
+            
+            expect(@search_result).to receive(:where).with("lower(name) like ?", "%dummy_name%")
             expect(@search_result).to receive(:where).with("production_id = ?", "dummy_id")
             expect(@search_result).to receive(:where).with("role = ?", "dummy_role")
             

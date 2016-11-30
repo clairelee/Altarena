@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
     before_action :get_user
-    
     def new
         if params[:id]
             @note = @user.find_note(params[:id])
