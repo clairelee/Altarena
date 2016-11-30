@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
           flash[:profile_error_notice] = "Error creating profile for #{@profile.name}."
           redirect_to new_profile_path
       end
-    end
+    end 
   end
 
   # PATCH/PUT /profiles/1
