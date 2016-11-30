@@ -18,7 +18,7 @@ User.all.each do |user|
     defaultNotes = [{:name => 'Eric', :production_id => 3, :role => 'Actor/Actress',
                     :description => 'not the best singer, but can act', :rating => 4, :attitude => 2, 
                     :star_sub => false, :musical_maturity => 1, :reads_music => 1, :harmony_singer => 1,
-                    :profile => profile}, {another}]
+                    :profile => profile}]
     
     defaultNotes.each do |note|
       note = user.new_note(note)
