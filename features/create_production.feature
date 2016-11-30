@@ -20,6 +20,7 @@ Feature: Create Production
   
   Scenario: Create existing production
     Given the production "Lion King" already exists
+    And I follow "Add Prod"
     When I fill in "production[name]" with "Lion King"
     And I press "Create"
     Then I should be on the Create productions page
