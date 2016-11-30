@@ -1,14 +1,17 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <p id="notice"><%= notice %></p>
-<br>
-<br>
-<br>
-<br>
-<br>
 <p class="text-center">
-  <strong>Name:</strong>
-  <%= @profile.name %>
+  <strong><big>
+  <%= @profile.name %></strong></big>
 </p>
-<br>
+<p class="text-center"><small>
+<%= link_to 'Edit', edit_profile_path(@profile) %> 
+<br></p></small>
 <p class="text-center">
   <%= image_tag(@profile.photo_url, size: "150x150")%>
 </p>
@@ -30,7 +33,4 @@
     <% end %>
   </tbody>
 </p>
-
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<br><br>
