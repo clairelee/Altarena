@@ -10,8 +10,8 @@
         
         <br>
 
-        
-        <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
+        <!--<div class="centered">-->
+          <%= form_for :note, :url => notes_search_path, :html => { :method => :post }  do |f| %>
 
           <p>
             <%= f.label :name, :class => "wide-text"%>
@@ -35,10 +35,12 @@
               <%= instrument.name %> <br>
             <% end %>
           </p>
+        <!--</div>-->
+
         
           <br>
         
-          <p>
+          <p class="search-btn">
             <%= f.submit "Search", :id => "buttons"%>
           </p>
           </div>
