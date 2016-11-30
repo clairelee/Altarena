@@ -10,11 +10,20 @@
 </p>
 
 <p>
+  <% if @profile.photo_url and @profile.photo_url != "" %>
   <%= image_tag(@profile.photo_url, size: "150x150")%>
+  <% else %>
+   <%= link_to 'Add a photo', edit_profile_path(@profile) %> 
+  <% end %>
+  
 </p>
 
 <p>
-  <a href=<%= @profile.resume_url %>>Resume</a>
+  <% if @profile.resume_url and @profile.resume_url != "" %>
+    <a href=<%= @profile.resume_url %>>Resume</a>
+  <% else %>
+   <%= link_to 'Add a resume', edit_profile_path(@profile) %> 
+  <% end %>
 </p>
 
 <p>
