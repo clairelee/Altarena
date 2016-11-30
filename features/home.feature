@@ -1,26 +1,21 @@
 Feature: Home Page Views
   
   As a user
-  I want to see all the profiles
-  so that I can easily see everything in front of me
+  I want to see all the features
+  So that I can easily navigate to each view
   
   Background:
     Given I am on the home page
-    And user "1" exists 
+    And I follow "Sign in with Facebook"
     
-  Scenario: Click new leads to new page
-    When I click "new"
-    Then I see the new page
-    
-  Scenario: Click production leads to production page
-    When I click "production_1"
-    Then I see the production page
+  Scenario: I can navigate to adding a production
+    When I follow "Add Prod"
+    Then I should be on the new_production page
 
-  Scenario: Click name leads to profile page
-    When I click "profile_1"
-    Then I see the profile page
-
-  Scenario: Click note leads to note page
-    When I click "note_1"
-    Then I see the note page
-    
+  Scenario: I can navigate to adding a profile
+    When I follow "Add Profile"
+    Then I should be on the new_profile page
+  
+  Scenario: I can navigate to adding a note
+    When I follow "Add Note"
+    Then I should be on the new_note page
