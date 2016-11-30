@@ -24,17 +24,12 @@
   
 </p>
 <br>
-<p class="text-center">
-  <a href=<%= @profile.resume_url %>>Resume</a>
-=======
-
 <p>
   <% if @profile.resume_url and @profile.resume_url != "" %>
     <a href=<%= @profile.resume_url %>>Resume</a>
   <% else %>
    <%= link_to 'Add a resume', edit_profile_path(@profile) %> 
   <% end %>
->>>>>>> show edit link when there is no profile photo or resume
 </p>
 <br>
 <p class="text-center">
