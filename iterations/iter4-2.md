@@ -7,3 +7,4 @@
 * As a director, I want to be able to search SUBSTRINGS of my notes, so I can see details about a specific query. 
 * As a director, I want to be able to be able to search notes/profiles by instrument, so I can find a specific artist that can play a certain instrument.
 * As a director, I want an autocomplete feature for a name when I make a new note, so I can easiliy associate a note with a certain name that is already in the database.
+* As a tester, I want to already have existing notes in my database so that I can easily test the new features.
