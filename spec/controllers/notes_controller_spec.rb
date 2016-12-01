@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe NotesController do
     before(:each) do
+        controller.class.skip_before_filter :require_login
+        request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
         @note = double("Note")
         @user = double("User")
         @user.stub(:find_note).and_return(@note)

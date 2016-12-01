@@ -20,6 +20,8 @@ require 'spec_helper'
 
 describe ProductionsController do
   before (:each) do
+    controller.class.skip_before_filter :require_login
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook] 
     @production = double("New Production")
     Production.stub(:new).and_return(@production)
   end
