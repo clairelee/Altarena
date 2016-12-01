@@ -13,15 +13,15 @@
 
   <p class="top_border">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => 'Enter Name Here', :id => "text-field" %>
   </p>
   <div class="field">
     <%= f.label :company %><br>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, :placeholder => 'Enter Company Here', :id => "text-field" %>
   </div>
   <div class="field">
     <%= f.label :opening_date %><br>
-    <%= f.datetime_select :opening_date %>
+    <%= f.datetime_select :opening_date, :placeholder => 'Enter Date Here', :id => "text-field" %>
   </div>
   <div class="actions">
     <%= f.submit %>

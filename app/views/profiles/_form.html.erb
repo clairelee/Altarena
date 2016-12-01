@@ -15,20 +15,20 @@
 
   <p class="top_border">
       <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :placeholder => 'Enter Name Here', :id => "text-field" %>
   </p><br>
   <p class="top_border">
     <%= f.label :photo_url %><br>
-    <%= f.text_field :photo_url %>
+    <%= f.text_field :photo_url, :placeholder => 'Enter Photo URL here', :id => "text-field" %>
   </p><br>
   
   <p class="top_border">
       <%= f.label :resume_url %><br>
-      <%= f.text_field :resume_url %>
+      <%= f.text_field :resume_url, :placeholder => 'Enter Resume URL here', :id => "text-field" %>
   </p><br>
   <p>
     <div class="actions">
-    <%= f.submit "Create", :id => "buttons" %>
+    <%= f.submit "Create", :id => "buttons-centered" %>
     </div>
   </p><br>
 <% end %>

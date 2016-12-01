@@ -15,21 +15,21 @@
 
         <%= form_for @production, url: productions_path do |f| %>
         
-          <p class="notice"><font color = "red"> <%= notice %></font></p>
+          <p class="notice"><font color = "red"> <%= notice %></font></p><br>
           <br>
           <p class="top_border">
             <%= f.label :name %><br>
-            <%= f.text_field :name, :id => "text-field" %>
+            <%= f.text_field :name, :placeholder => 'Enter Name Here', :id => "text-field" %>
           </p>
           <br>
           <p>
             <%= f.label :company %><br>
-            <%= f.text_field :company, :id => "text-field" %>
+            <%= f.text_field :company, :placeholder => 'Enter Company Here', :id => "text-field" %>
           </p>
           <br>
           <p>
             <%= f.label :opening_date %><br>
-            <%= f.text_field :opening_date, :id => "text-field" %>
+            <%= f.text_field :opening_date, :placeholder => 'Enter Date', :id => "text-field" %>
           </p>
           <br>
           <p>
