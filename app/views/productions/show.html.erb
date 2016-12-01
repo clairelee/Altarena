@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<br><br><br><br><br>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <font color="red"><p id="notice"><%= notice %></p></font>
+<h1> View Production </h1><br><br>
 <p>
-  <strong>Name:</strong>
-  <%= @production.name %>
+  <strong>
+  <big><%= @production.name %></big></strong>
 </p>
-
+<br><br>
 <p>
   <strong>Company:</strong>
   <%= @production.company %>
 </p>
-
+<br><br>
 <p>
   <strong>Opening date:</strong>
   <%= @production.opening_date %>
-</p>
+</p><br><br>
 
 <%= link_to 'Edit', edit_production_path(@production) %> |
-<%= link_to 'Back', productions_path %>
+<%= link_to 'View All Productions', productions_path %><br><br>
+</div></div></div>

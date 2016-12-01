@@ -10,9 +10,9 @@
       <h1>Profile</h1>
       <p id="notice"><%= notice %></p>
       <p class="text-center">
-        <strong>Name:</strong>
-        <%= @profile.name %>
+        <strong><big><%= @profile.name %></strong></big>
       </p>
+      <p class="text-center"><small><%= link_to 'Edit', edit_profile_path(@profile) %> </small></p>
       
       <p class="text-center">
         <% if @profile.photo_url and @profile.photo_url != "" %>
@@ -25,22 +25,22 @@
       <br>
       <p class="text-center">
         <% if @profile.resume_url and @profile.resume_url != "" %>
-          <a href=<%= @profile.resume_url %>>Resume</a>
+          <a href=<%= @profile.resume_url %>>RESUME</a>
         <% else %>
          <%= link_to 'Add a resume', edit_profile_path(@profile) %> 
         <% end %>
       </p>
+      <br>
       
-      <p class="text-center">
-        <strong>Notes about this person:</strong>
-        <br>
-        <table class="table-width">
+        <strong><p>Notes about this person:</strong></p>
+
+        <p class="text-center">
+        <table border="1">
           <thead>
             <tr>
               <th>Production</th>
               <th>Role</th>
               <th>Notes</th>
-              <th colspan="3"></th>
             </tr>
           </thead>
           <tbody>
@@ -54,9 +54,7 @@
           </tbody>
         </table>
       </p>
-      <%= link_to 'Edit', edit_profile_path(@profile) %> |
-      <%= link_to 'Back', profiles_path %>
-
+<br><br>
     </div>
   </div>
 </div>

@@ -19,7 +19,7 @@
   <tbody>
     <% @productions.each do |production| %>
       <tr>
-        <td><%= production.name %></td>
+        <td><%= link_to production.name, production_path(production) %></td>
         <td><%= production.company %></td>
         <td><%= production.opening_date %></td>
         <td><%= link_to 'Show', production %></td>
