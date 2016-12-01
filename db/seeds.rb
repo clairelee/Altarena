@@ -22,17 +22,17 @@ production2 = Production.create(:name => "The Jungle Book", :company => "Disney"
 
 User.all.each do |user|
     
-    # defaultNotes = [{:name => 'Ray Charles', :production_id => 1, :role => 'Actor/Actress',
-    #                 :description => 'Not the best singer, but can act', :rating => 4, :attitude => 2, 
-    #                 :star_sub => false, :musical_maturity => 1, :reads_music => 1, :harmony_singer => 1,
-    #                 :profile => profile},
-    #                 {:name => 'Ray Charles', :production_id => 2, :role => 'Musician',
-    #                 :description => 'Amazing musician, can pick up an learn music at a rapid pace', :rating => 5, :attitude => 4,
-    #                 :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 4,
-    #                 :profile => profile}]
+    defaultNotes = [{:name => 'Ray Charles', :production_id => 1, :role => 'Actor/Actress',
+                    :description => 'Not the best singer, but can act', :rating => 4, :attitude => 2, 
+                    :star_sub => false, :musical_maturity => 1, :reads_music => 1, :harmony_singer => 1,
+                    :profile => profile},
+                    {:name => 'Ray Charles', :production_id => 2, :role => 'Musician',
+                    :description => 'Amazing musician, can pick up an learn music at a rapid pace', :rating => 5, :attitude => 4,
+                    :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 4,
+                    :profile => profile}]
 
                     
-    # defaultNote = [{:name => 'Eric Walbridge', :production_id => 1, :role => 'Actor/Actress',
+    # defaultNotes = [{:name => 'Eric Walbridge', :production_id => 1, :role => 'Actor/Actress',
     #             :description => 'Eric is extremeley responsive to constructive criticism', :rating => 4, :attitude => 3,
     #             :star_sub => true, :musical_maturity => 3, :reads_music => 1, :harmony_singer => 2,
     #             :profile => profile},
@@ -42,19 +42,21 @@ User.all.each do |user|
     #             :profile => profile}]
 
     
-    defaultNote = [{:name => 'Buddy Rich', :production_id => 1, :role => 'Musician',
-                    :description => 'Buddy is an amazing drummer, never have any problems with him', :rating => 5, :attitude => 4,
-                    :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 1,
-                    :profile => profile},
-                    {:name => 'Buddy Rich', :production_id => 2, :role => 'Musician',
-                    :description => 'Buddy is not only a great musician, but he is also a pleasure to work with', :rating => 5, :attitude => 4,
-                    :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 1,
-                    :profile => profile}]
+    # defaultNotes = [{:name => 'Buddy Rich', :production_id => 1, :role => 'Musician',
+    #                 :description => 'Buddy is an amazing drummer, never have any problems with him', :rating => 5, :attitude => 4,
+    #                 :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 1,
+    #                 :profile => profile},
+    #                 {:name => 'Buddy Rich', :production_id => 2, :role => 'Musician',
+    #                 :description => 'Buddy is not only a great musician, but he is also a pleasure to work with', :rating => 5, :attitude => 4,
+    #                 :star_sub => true, :musical_maturity => 4, :reads_music => 3, :harmony_singer => 1,
+    #                 :profile => profile}]
                     
     defaultNotes.each do |note|
       note = user.new_note(note)
       note.save!
-      new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "3")
+      new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "4")
+    #   new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "3")
+    #   new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "2")
     end
     user.save
 end    
