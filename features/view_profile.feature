@@ -22,7 +22,7 @@ Feature: Viewing another person's Profile
     
   Scenario: View profile 
     Given I am on the profiles page
-    When I follow "Show"
+    When I follow "John Ho"
     Then I should see "John Ho"
     And I should see "Mulan"
     
