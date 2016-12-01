@@ -49,27 +49,7 @@
             <%= link_to 'Back', new_note_path, id: "back-btn-actor" %>
         <% end %>
         <br>  
-        <div class="sign_out_position">
-          <% if current_user %>
-          Signed in as <strong><%= current_user.name %></strong>!
-              <div>
-                
-                <div class="hidden-xs hidden-sm hidden-md hidden-lg">
-                  <%= link_to "Sign out", signout_path, id: "sign_out" %>
-                  <%= link_to "My notes", notes_path %>
-                  <%= link_to "Create note", new_note_path %>
-                </div>
-                
-              </div>
-              <% else %>
-                <button class="btn-facebook btn-lg">
-                  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-                </button>
-                <button class="btn-linkedin btn-lg">
-                  <%= link_to 'Sign in with Linkedin', '/auth/linkedin', id: "sign_in_linkedin" %>
-                </button>
-              <% end %>
-        </div>
+        
       </div>
     </div>
   </div>

@@ -14,27 +14,21 @@
   <br>
 
   <p class="top_border">
-    <div class="field">
       <%= f.label :name %><br>
-      <%= f.text_area :name %>
-    </div>
-  </p>
-  <p>
-    <div class="field">
+      <%= f.text_field :name %>
+  </p><br>
+  <p class="top_border">
     <%= f.label :photo_url %><br>
-    <%= f.text_area :photo_url %>
-    </div>
-  </p>
+    <%= f.text_field :photo_url %>
+  </p><br>
   
-  <p>
-    <div class="field">
+  <p class="top_border">
       <%= f.label :resume_url %><br>
-      <%= f.text_area :resume_url %>
-    </div>
-  </p>
+      <%= f.text_field :resume_url %>
+  </p><br>
   <p>
     <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create", :id => "buttons" %>
     </div>
-  </p>
+  </p><br>
 <% end %>

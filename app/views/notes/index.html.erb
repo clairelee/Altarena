@@ -13,12 +13,20 @@
         <p class="top_border">
         </p>
         
-        <p id="notice"><%= flash[:delete_notice] %></p>
+        <p id="notice"><font color = "red"><%= flash[:delete_notice] %></p></font>
         
         <br>
         <div class="centered">
           <!--<table class="index-table">-->
           <table border="1">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th colspan="3"><center>Actions</center></th>
+              </tr>
+            </thead>
+            <tbody>
             <% @notes.each do |note| %>
               <tr>
                 <td><%= link_to note.name, profile_path(note.profile_id) %></td>
@@ -28,6 +36,7 @@
                 <td><%= link_to 'Delete', note_path(note), method: 'delete' , data: { confirm: 'Are you certain you want to delete this?' } %></td>
               </tr>
             <% end %>
+            </tbody>
           </table>
         </div>
         

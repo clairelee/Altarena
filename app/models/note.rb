@@ -6,6 +6,7 @@ class Note < ActiveRecord::Base
     belongs_to :profile
     has_many :notes_instruments
     has_many :instruments, through: :notes_instruments
+   
     
     def find_by_name(name)
     end
