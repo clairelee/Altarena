@@ -59,4 +59,4 @@ instruments = Instrument.create([{ name: 'Violin' }, { name: 'Percussion'}, { na
 #       new_notes_instrument = NotesInstrument.create(:note_id => "#{note.id}", :instrument_id => "2")
 #     end
 #     user.save
-end    
+# end    
